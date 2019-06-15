@@ -28,7 +28,7 @@
     <!-- //add-products --> 
     <!-- order -->      
     <div class="wthree-order">  
-        <img src="images/i2.jpg" class="w3order-img" alt=""/>
+        <img src="{!! asset('images/i2.jpg') !!}" class="w3order-img" alt=""/>
         <div class="container">
             <h3 class="w3ls-title">How To Order Online Food</h3>
             <p class="w3lsorder-text">Get your favourite food in 4 simple steps.</p>
@@ -129,56 +129,56 @@
                     <!-- Owl-Carousel -->
                     <div id="owl-demo" class="owl-carousel text-center agileinfo-gallery-row">
                         <a href="products.html" class="item g1">
-                            <img class="lazyOwl" src="images/g1.jpg" title="Our latest gallery" alt=""/>
+                            <img class="lazyOwl" src="{!! asset('images/g1.jpg') !!}" title="Our latest gallery" alt=""/>
                             <div class="agile-dish-caption">
                                 <h4>Duis congue</h4>
                                 <span>Neque porro quisquam est qui dolorem </span>
                             </div>
                         </a>
                         <a href="products.html" class="item g1">
-                            <img class="lazyOwl" src="images/g2.jpg" title="Our latest gallery" alt=""/>
+                            <img class="lazyOwl" src="{!! asset('images/g2.jpg') !!}" title="Our latest gallery" alt=""/>
                             <div class="agile-dish-caption">
                                 <h4>Duis congue</h4>
                                 <span>Neque porro quisquam est qui dolorem </span>
                             </div>
                         </a>
                         <a href="products.html" class="item g1">
-                            <img class="lazyOwl" src="images/g3.jpg" title="Our latest gallery" alt=""/>
+                            <img class="lazyOwl" src="{!! asset('images/g3.jpg') !!}" title="Our latest gallery" alt=""/>
                             <div class="agile-dish-caption">
                                 <h4>Duis congue</h4>
                                 <span>Neque porro quisquam est qui dolorem </span>
                             </div>
                         </a>
                         <a href="products.html" class="item g1">
-                            <img class="lazyOwl" src="images/g4.jpg" title="Our latest gallery" alt=""/>
+                            <img class="lazyOwl" src="{!! asset('images/g4.jpg') !!}" title="Our latest gallery" alt=""/>
                             <div class="agile-dish-caption">
                                 <h4>Duis congue</h4>
                                 <span>Neque porro quisquam est qui dolorem </span>
                             </div>
                         </a>
                         <a href="products.html" class="item g1">
-                            <img class="lazyOwl" src="images/g5.jpg" alt=""/>
+                            <img class="lazyOwl" src="{!! asset('images/g5.jpg') !!}" alt=""/>
                             <div class="agile-dish-caption">
                                 <h4>Duis congue</h4>
                                 <span>Neque porro quisquam est qui dolorem </span>
                             </div>
                         </a> 
                         <a href="products.html" class="item g1">
-                            <img class="lazyOwl" src="images/g1.jpg" title="Our latest gallery" alt=""/>
+                            <img class="lazyOwl" src="{!! asset('images/g1.jpg') !!}" title="Our latest gallery" alt=""/>
                             <div class="agile-dish-caption">
                                 <h4>Duis congue</h4>
                                 <span>Neque porro quisquam est qui dolorem </span>
                             </div>
                         </a>
                         <a href="products.html" class="item g1">
-                            <img class="lazyOwl" src="images/g2.jpg" title="Our latest gallery" alt=""/>
+                            <img class="lazyOwl" src="{!! asset('images/g2.jpg') !!}" title="Our latest gallery" alt=""/>
                             <div class="agile-dish-caption">
                                 <h4>Duis congue</h4>
                                 <span>Neque porro quisquam est qui dolorem </span>
                             </div>
                         </a>
                         <a href="products.html" class="item g1">
-                            <img class="lazyOwl" src="images/g3.jpg" title="Our latest gallery" alt=""/>
+                            <img class="lazyOwl" src="{!! asset('images/g3.jpg') !!}" title="Our latest gallery" alt=""/>
                             <div class="agile-dish-caption">
                                 <h4>Duis congue</h4>
                                 <span>Neque porro quisquam est qui dolorem </span>
@@ -217,7 +217,7 @@
                     <input type="submit" value="Subscribe">
                     <div class="clearfix"> </div> 
                 </form>  
-                <img src="images/i1.png" class="sub-w3lsimg" alt=""/>
+                <img src="{!! asset('images/i1.png') !!}" class="sub-w3lsimg" alt=""/>
             </div>
             <div class="clearfix"> </div> 
         </div>
