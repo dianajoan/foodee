@@ -10,16 +10,16 @@
 					<div class="w3ls-header-right">
 						<ul> 
 							<li class="head-dpdn">
-								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
+								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +256771991162 
 							</li> 
 							<li class="head-dpdn">
-								<a href="login.html"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+								<a href="{{ route('login') }}"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
 							</li> 
 							<li class="head-dpdn">
-								<a href="signup.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+								<a href="{{ route('register') }}"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
 							</li> 
 							<li class="head-dpdn">
-								<a href="offers.html"><i class="fa fa-gift" aria-hidden="true"></i> Offers</a>
+								<a href="{{ route('offers') }}"><i class="fa fa-gift" aria-hidden="true"></i> Offers</a>
 							</li> 
 							<li class="head-dpdn">
 								<a href="help.html"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
@@ -42,11 +42,11 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>  
-							<h1><a href="index.html">Staple<span>Best Food Collection</span></a></h1>
+							<h1><a href="index.html">KitchenFood<span>Best Food Collection</span></a></h1>
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.html" class="active">Home</a></li>	
+								<li><a href="{{ url('/') }}" class="active">Home</a></li>	
 								<!-- Mega Menu -->
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
@@ -55,41 +55,41 @@
 											<div class="col-sm-4">
 												<ul class="multi-column-dropdown">
 													<h6>Food type</h6>  
-													<li><a href="menu.html">Breakfast</a></li> 
-													<li><a href="menu.html">Lunch</a></li> 
-													<li><a href="menu.html">Dinner</a></li> 
+													<li><a href="{{ route('menu') }}">Breakfast</a></li> 
+													<li><a href="{{ route('menu') }}">Lunch</a></li> 
+													<li><a href="{{ route('menu') }}">Dinner</a></li> 
 												</ul>
 											</div>
 											<div class="col-sm-4">
 												<ul class="multi-column-dropdown">
 													<h6>Cuisine</h6> 
-													<li><a href="menu.html">Indian Recipes</a></li> 
-													<li><a href="menu.html">American Recipes</a></li> 
-													<li><a href="menu.html">French Recipes</a></li> 
-													<li><a href="menu.html">Italian Recipes</a></li> 
+													<li><a href="{{ route('menu') }}">Indian Recipes</a></li> 
+													<li><a href="{{ route('menu') }}">American Recipes</a></li> 
+													<li><a href="{{ route('menu') }}">French Recipes</a></li> 
+													<li><a href="{{ route('menu') }}">Italian Recipes</a></li> 
 												</ul>
 											</div>
 											<div class="col-sm-4">
 												<ul class="multi-column-dropdown">
 													<h6>Box type</h6> 
-													<li><a href="menu.html">Diet</a></li> 
-													<li><a href="menu.html">Mini</a></li> 
-													<li><a href="menu.html">Regular</a></li> 
-													<li><a href="menu.html">Special</a></li> 
+													<li><a href="{{ route('menu') }}">Diet</a></li> 
+													<li><a href="{{ route('menu') }}">Mini</a></li> 
+													<li><a href="{{ route('menu') }}">Regular</a></li> 
+													<li><a href="{{ route('menu') }}">Special</a></li> 
 												</ul>
 											</div> 
 											<div class="clearfix"></div>
 										</div>
 									</ul>
 								</li>
-								<li><a href="about.html">About</a></li> 
+								<li><a href="{{ route('about') }}">About</a></li> 
 								<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
 									<ul class="dropdown-menu">
 										<li><a href="icons.html">Web Icons</a></li>
 										<li><a href="codes.html">Short Codes</a></li>     
 									</ul>
 								</li>  
-								<li><a href="contact.html">Contact Us</a></li>
+								<li><a href="{{ route('contact') }}">Contact Us</a></li>
 							</ul>
 						</div>
 						<div class="cart cart box_1"> 
