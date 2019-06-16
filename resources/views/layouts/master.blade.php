@@ -27,6 +27,8 @@
 
 		@yield('content')
 
+		@include('layouts.shared.subscribe')
+
 		@include('layouts.shared.footer')
 		
 	</body>
