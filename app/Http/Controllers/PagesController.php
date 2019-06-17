@@ -36,4 +36,24 @@ class PagesController extends Controller
 		return view('web.products');
 	}
 
+	public function faq()
+	{
+		return view('web.more.faq');
+	}
+
+	public function help()
+	{
+		return view('web.more.help');
+	}
+
+	public function privacy()
+	{
+		return view('web.more.privacy');
+	}
+
+	public function terms()
+	{
+		return view('web.more.terms');
+	}
+
 }

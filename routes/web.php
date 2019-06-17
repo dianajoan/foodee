@@ -59,4 +59,24 @@ Route::group(['prefix' => 'web', 'middleware' => 'web'], function(){
 		'as'  => 'offers',
 		'uses' => 'PagesController@offers',
 	]);
+	// faq page
+	Route::get('faq', [
+		'as'  => 'faq',
+		'uses' => 'PagesController@faq',
+	]);
+	// help page
+	Route::get('help', [
+		'as'  => 'help',
+		'uses' => 'PagesController@help',
+	]);
+	// privacy page
+	Route::get('privacy', [
+		'as'  => 'privacy',
+		'uses' => 'PagesController@privacy',
+	]);
+	// terms page
+	Route::get('terms', [
+		'as'  => 'terms',
+		'uses' => 'PagesController@terms',
+	]);
 });

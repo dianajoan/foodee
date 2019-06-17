@@ -8,13 +8,13 @@
 						<li><a href="{{ route('about') }}">About Us</a></li>
 						<li><a href="{{ route('contact') }}">Contact Us</a></li>  
 						<li><a href="{{ route('careers') }}">Careers</a></li>  
-						<li><a href="help.html">Partner With Us</a></li>   
+						<li><a href="{{ route('help') }}">Partner With Us</a></li>   
 					</ul>
 				</div> 
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>help</h3>
 					<ul>
-						<li><a href="faq.html">FAQ</a></li> 
+						<li><a href="{{ route('faq') }}">FAQ</a></li> 
 						<li><a href="{{ route('login') }}">Returns</a></li>   
 						<li><a href="{{ route('login') }}">Order Status</a></li> 
 						<li><a href="{{ route('offers') }}">Offers</a></li> 
@@ -23,8 +23,8 @@
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>policy info</h3>
 					<ul>  
-						<li><a href="terms.html">Terms & Conditions</a></li>  
-						<li><a href="privacy.html">Privacy Policy</a></li>
+						<li><a href="{{ route('terms') }}">Terms & Conditions</a></li>  
+						<li><a href="{{ route('privacy') }}">Privacy Policy</a></li>
 						<li><a href="{{ route('login') }}">Return Policy</a></li> 
 					</ul>   
 				</div>

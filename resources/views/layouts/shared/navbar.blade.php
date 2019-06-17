@@ -22,7 +22,7 @@
 								<a href="{{ route('offers') }}"><i class="fa fa-gift" aria-hidden="true"></i> Offers</a>
 							</li> 
 							<li class="head-dpdn">
-								<a href="help.html"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
+								<a href="{{ route('help') }}"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 							</li>
 						</ul>
 					</div>
