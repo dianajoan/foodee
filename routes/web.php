@@ -10,35 +10,52 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Auth::routes(['verify' => true]);
+Route::get('/home', 'HomeController@index')->name('home');
+// welcome page
 Route::get('/', [
 	'as' 	=> 'welcome',
-	'uses' 	=> 'PagesController@home',
-]);
-Route::get('/about', [
-	'as' 	=> 'about',
-	'uses' 	=> 'PagesController@about',
-]);
-Route::get('/contact', [
-	'as'  => 'contact',
-	'uses' => 'PagesController@contact',
-]);
-Route::get('/careers', [
-	'as'  => 'careers',
-	'uses' => 'PagesController@careers',
-]);
-Route::get('/menu', [
-	'as'  => 'menu',
-	'uses' => 'PagesController@menu',
-]);
-Route::get('/offers', [
-	'as'  => 'offers',
-	'uses' => 'PagesController@offers',
-]);
-Route::get('/products', [
-	'as'  => 'products',
-	'uses' => 'PagesController@products',
+	'uses' 	=> function(){
+		return view('home');
+	},
 ]);
 
-Auth::routes();
+Route::group(['prefix' => 'admin', 'middleware' => ['auth','verified']], function(){
 
-Route::get('/home', 'HomeController@index')->name('home');
+});
+
+Route::group(['prefix' => 'home', 'middleware' => ['auth','verified']], function(){
+	// view the food menu
+	Route::get('/menu', [
+		'as'  => 'menu',
+		'uses' => 'PagesController@menu',
+	]);
+	Route::get('/products', [
+		'as'  => 'products',
+		'uses' => 'PagesController@products',
+	]);
+});
+
+Route::group(['prefix' => 'web', 'middleware' => 'web'], function(){
+	// about page
+	Route::get('about', [
+		'as' 	=> 'about',
+		'uses' 	=> 'PagesController@about',
+	]);
+	//
+	Route::get('contact', [
+		'as'  => 'contact',
+		'uses' => 'PagesController@contact',
+	]);
+	//
+	Route::get('careers', [
+		'as'  => 'careers',
+		'uses' => 'PagesController@careers',
+	]);
+	//
+	Route::get('/offers', [
+		'as'  => 'offers',
+		'uses' => 'PagesController@offers',
+	]);
+});
