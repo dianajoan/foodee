@@ -23,11 +23,7 @@
 	</head>
 	<body> 
 
-		@include('layouts.shared.navbar')
-
 		@yield('content')
-
-		@include('layouts.shared.authfoot')
 		
 	</body>
 </html>

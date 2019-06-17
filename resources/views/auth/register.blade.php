@@ -2,20 +2,13 @@
 
 @section('content')
 
-<!-- breadcrumb -->  
-    <div class="container"> 
-        <ol class="breadcrumb w3l-crumbs">
-            <li><a href="{{ url('/') }}"><i class="fa fa-home"></i> Home</a></li> 
-            <li class="active">Sign Up</li>
-        </ol>
-    </div>
-    <!-- //breadcrumb -->
     <!-- sign up-page -->
     <div class="login-page about">
         <img class="login-w3img" src="{!! asset('images/img3.jpg') !!}" alt="">
         <div class="container"> 
-            <h3 class="w3ls-title w3ls-title1">Sign Up to your account</h3>  
+            <h3 class="w3ls-title w3ls-title1">{{ config('app.name') }}</h3>  
             <div class="login-agileinfo"> 
+                <h4 class="w3ls-title w3ls-title1"><span>Signup Account</span></h4>
                 <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
                         @csrf 
                     <input class="agile-ltext {{ $errors->has('name') ? ' is-invalid' : '' }}" type="text" name="name" value="{{ old('name') }}" required autofocus placeholder="Name">
@@ -62,7 +55,8 @@
                     </div>   
                     <input type="submit" value="Sign Up">
                 </form>
-                <p>Already have an account?  <a href="{{ route('login') }}"> Login Now!</a></p> 
+                <p>Already have an account?  <a href="{{ route('login') }}"> Login Now!</a></p>
+                <p>&copy; 2019 {{ config('app.name') }}. All rights reserved | Design by <a href="mailto:dianajoanita900@gmail.com">Diana Joanita</a></p> 
             </div>   
         </div>
     </div>
