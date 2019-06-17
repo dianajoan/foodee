@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.auth')
 
 @section('content')
 
@@ -49,7 +49,7 @@
                                 <strong>{{ $errors->first('password') }}</strong>
                             </span>
                         @endif
-                                
+
                     <div class="wthreelogin-text"> 
                         <ul> 
                             <li>

@@ -43,7 +43,7 @@
 	</div>
 	<div class="copyw3-agile"> 
 		<div class="container">
-			<p>&copy; 2019 KitchenFood. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+			<p>&copy; 2019 KitchenFood. All rights reserved | Design by <a href="mailto:dianajoanita900@gmail.com">Diana Joanita</a></p>
 		</div>
 	</div>
 	<!-- //footer -->
