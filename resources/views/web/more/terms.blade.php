@@ -1,16 +1,8 @@
-@extends('layouts.master')
+@extends('layouts.mas')
 @section('title', 'Terms')
 
 @section('content')
 
-<!-- breadcrumb -->  
-	<div class="container">	
-		<ol class="breadcrumb w3l-crumbs">
-			<li><a href="{{ url('/') }}"><i class="fa fa-home"></i> Home</a></li> 
-			<li class="active">Terms & Conditions</li>
-		</ol>
-	</div>
-	<!-- //breadcrumb -->
 	<!-- privacy-page -->
 	<div class="privacy about">
 		<div class="container"> 

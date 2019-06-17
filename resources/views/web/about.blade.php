@@ -24,8 +24,8 @@
 							<i class="fa fa-truck" aria-hidden="true"></i>
 						</div> 
 						<div class="ftr-top-right">
-							<h4>Fusce tempus</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
+							<h4>Our Community</h4>
+							<p>KitchenFood is a global lifestyle community with roots in every corner of the world. United by a love for great taste, our international community of creators opens the door to new experiences — whether you’re looking to expand your palate or embark on your next adventure.</p>
 						</div> 
 						<div class="clearfix"> </div>
 					</div> 
@@ -34,9 +34,9 @@
 							<i class="fa fa-user" aria-hidden="true"></i>
 						</div> 
 						<div class="ftr-top-right">
-							<h4>Consectetur</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
-						</div> 
+							<h4>Original Shows</h4>
+							<p>KitchenFood TV gives you full access to hundreds of hours of original KitchenFood shows, featuring your favorite food and travel hosts doing even more of the things you love. Watch streaming 24/7 or on demand from any device.</p>
+						</div> <a href="#">Watch Now</a>
 						<div class="clearfix"> </div>
 					</div>
 					<div class="col-md-4 ftr-top-grids">
@@ -44,8 +44,8 @@
 							<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
 						</div> 
 						<div class="ftr-top-right">
-							<h4>Dolor siet</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
+							<h4>Shop the KitchenFood Store</h4>
+							<p>The KitchenFood Store is a curated collection of unique products designed to enhance everyday life, the Tastemade way. Whether you're looking for artisan pieces to gift a friend or you're shopping for your own space, we've got what you need.</p>
 						</div>
 						<div class="clearfix"> </div>
 					</div> 

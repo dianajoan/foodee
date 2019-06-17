@@ -21,7 +21,11 @@
 	</head>
 	<body> 
 
+		@include('layouts.shared.nav')
+
 		@yield('content')
+
+		@include('layouts.shared.foot')
 		
 	</body>
 </html>
