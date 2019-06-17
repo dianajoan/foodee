@@ -24,7 +24,7 @@
 					<input type="submit" value="Subscribe">
 					<div class="clearfix"> </div> 
 				</form> 
-				<img src="images/i1.png" class="sub-w3lsimg" alt=""/>
+				<img src="{!! asset('images/i1.png') !!}" class="sub-w3lsimg" alt=""/>
 			</div>
 			<div class="clearfix"> </div> 
 		</div>
