@@ -11,6 +11,9 @@
 		<link href="{!! asset('css/font-awesome.css') !!}" rel="stylesheet"> <!-- font-awesome icons -->
 		<link rel="stylesheet" href="{!! asset('css/owl.carousel.css') !!}" type="text/css" media="all"/> <!-- Owl-Carousel-CSS -->
 		<!-- //Custom Theme files --> 
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="{!! asset('img/favicon.ico') !!}">
+
 		<!-- js -->
 		<script src="{!! asset('js/jquery-2.2.3.min.js') !!}"></script>  
 		<!-- //js -->
