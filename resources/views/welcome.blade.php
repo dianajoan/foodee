@@ -76,7 +76,7 @@
               font-weight: 100;
               line-height: 45px;
               margin: 0 0 2em;
-              max-width: 160px;
+              max-width: 100px;
               position: relative;
               text-decoration: none;
               text-transform: uppercase;
