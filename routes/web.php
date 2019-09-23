@@ -11,15 +11,23 @@
 |
 */
 
-Auth::routes(['verify' => true]);
-Route::get('home', 'HomeController@index')->name('home');
-// welcome page
-Route::get('/', [
-	'as' 	=> 'welcome',
-	'uses' 	=> function(){
-		return view('home');
-	},
-]);
+Auth::routes();
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => 'web'], function(){
+	Route::get('test',[
+		'as' 	=> 'test',
+		'uses'	=> function(){
+			return view('ohome');
+		},
+	]);
+
+});
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth','verified']], function(){
 
