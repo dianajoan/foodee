@@ -1,4 +1,4 @@
-# KitchenFood Application Project in Php
+# Onlinefood Application Project in Php
 
 This is an application that manages customers orders and deliveries online.
 
@@ -30,19 +30,24 @@ Information is all around but not accessed by all. Brilliance is evenly distribu
 This is how you can install this project on your local machine, computer or just environment.
 
 1. First, clone the repository to your local machine:
-	git clone 
+	```git clone``` 
 
 2. Install the requirements:
-	`pip install -r requirements.txt`
+	```
+    composer install
+    composer update
+```
 
-3. Create the database:
- 	`php artisan migrate `
+3. Connect to your server ike wamp or xamp and enter the database name ```db_food``` and other credentials.
+
+4. Create the database:
+ 	```php artisan migrate ```
 
 4. Finally, run the development server:
 	
 	
-	type php artisan serve
-    Open your fav browser and type `localhost:8080` to see our application home page
+	type ```php artisan serve```
+    Open your fav browser and type ```localhost:8080``` to see our application home page
 
 ### Licenses
 
