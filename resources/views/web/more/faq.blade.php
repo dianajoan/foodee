@@ -1,16 +1,8 @@
-@extends('layouts.master')
+@extends('layouts.mas')
 @section('title', 'FAQ')
 
 @section('content')
 
-<!-- breadcrumb -->  
-	<div class="container">	
-		<ol class="breadcrumb w3l-crumbs">
-			<li><a href="{{ url('/') }}"><i class="fa fa-home"></i> Home</a></li> 
-			<li class="active">FAQ</li>
-		</ol>
-	</div>
-	<!-- //breadcrumb -->
 	<!-- faq-page -->
 	<div class="faq-w3agile about">
 		<div class="container"> 

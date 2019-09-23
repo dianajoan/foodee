@@ -6,7 +6,7 @@
     <div class="login-page about">
         <img class="login-w3img" src="{!! asset('images/img3.jpg') !!}" alt="">
         <div class="container"> 
-            <h3 class="w3ls-title w3ls-title1">{{ config('app.name') }}</h3>  
+            <h3 class="w3ls-title w3ls-title1"><a href="{{ url('/') }}">{{ config('app.name') }}</a></h3>  
             <div class="login-agileinfo"> 
                 <h4 class="w3ls-title w3ls-title1"><span>Login Account</span></h4>
                 <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
@@ -40,7 +40,7 @@
                     </div>   
                     <input type="submit" value="{{ __('Login') }}">
                 </form>
-                <p>Don't have an Account? <a href="{{ route('register') }}"> Sign Up Now!</a></p> 
+                <p>Don't have an Account? <a href="{{ route('register') }}"> Sign Up Now!</a></p>
                 <p>&copy; 2019 {{ config('app.name') }}. All rights reserved | Design by <a href="mailto:dianajoanita900@gmail.com">Diana Joanita</a></p>
             </div>   
         </div>

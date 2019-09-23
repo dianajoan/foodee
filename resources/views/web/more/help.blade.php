@@ -1,16 +1,8 @@
-@extends('layouts.master')
+@extends('layouts.mas')
 @section('title', 'Help')
 
 @section('content')
 
-<!-- breadcrumb -->  
-	<div class="container">	
-		<ol class="breadcrumb w3l-crumbs">
-			<li><a href="{{ url('/') }}"><i class="fa fa-home"></i> Home</a></li> 
-			<li class="active">Help</li>
-		</ol>
-	</div>
-	<!-- //breadcrumb -->
 	<!-- help-page -->
 	<div class="help about">
 		<div class="container"> 

@@ -15,10 +15,10 @@
 							<!-- Authentication Links -->
                             @if (Auth::guest())
 								<li class="head-dpdn">
-									<a href="{{ route('login') }}" target="_blank"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+									<a href="{{ route('login') }}"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
 								</li> 
 								<li class="head-dpdn">
-									<a href="{{ route('register') }}" target="_blank"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+									<a href="{{ route('register') }}"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
 								</li>
 							@else
 							<li class="head-dpdn">

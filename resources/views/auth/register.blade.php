@@ -6,7 +6,7 @@
     <div class="login-page about">
         <img class="login-w3img" src="{!! asset('images/img3.jpg') !!}" alt="">
         <div class="container"> 
-            <h3 class="w3ls-title w3ls-title1">{{ config('app.name') }}</h3>  
+            <h3 class="w3ls-title w3ls-title1"><a href="{{ url('/') }}">{{ config('app.name') }}</a></h3>  
             <div class="login-agileinfo"> 
                 <h4 class="w3ls-title w3ls-title1"><span>Signup Account</span></h4>
                 <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
