@@ -33,11 +33,12 @@ This is how you can install this project on your local machine, computer or just
 	```git clone``` 
 
 2. Install the requirements:
-	```composer install
-     composer update
-     ```
+	```
+    composer install
+    composer update
+```
 
-3. Connect to your server ike wamp or xamp and enter the database name ```db_food``` and otehr credentials.
+3. Connect to your server ike wamp or xamp and enter the database name ```db_food``` and other credentials.
 
 4. Create the database:
  	```php artisan migrate ```
