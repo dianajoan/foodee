@@ -73,7 +73,7 @@
               color: #fff;
               cursor: pointer;
               font-size: 16px;
-              font-weight: 100;
+              font-weight: 160;
               line-height: 45px;
               margin: 0 0 2em;
               max-width: 100px;
@@ -174,9 +174,14 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://twitter.com/LadyAnitanad" class="btn btn-5">Twitter</a>
-                    <a href="https://codepen.io/anitanad/" class="btn btn-5">Codepen</a>
-                    <a href="https://github.com/dianajoan"class="btn btn-5">GitHub</a>
+                    <a href="{{ route('about') }}">About</a>
+                    <a href="{{ route('careers') }}">Careers</a>
+                    <a href="{{ route('offers') }}">Offers</a>
+                    <a href="{{ route('faq') }}">Faq</a>
+                    <a href="{{ route('help') }}">Help</a>
+                    <a href="{{ route('privacy') }}">Privacy</a>
+                    <a href="{{ route('terms') }}">Terms</a>
+                    <a href="{{ route('contact') }}">Contact</a>
                 </div>
             </div>
         </div>
