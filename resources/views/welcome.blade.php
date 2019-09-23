@@ -21,7 +21,7 @@
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
-                background-image: url("https://images.pexels.com/photos/890515/pexels-photo-890515.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+                background-image: url("https://images.pexels.com/photos/2955817/pexels-photo-2955817.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
                 background-size: cover;
                 display: block;
                 background-attachment: fixed;
@@ -57,7 +57,7 @@
 
             .links > a {
                 color: #fff;
-                padding: 0 25px;
+                padding: 0 14px;
                 font-size: 13px;
                 font-weight: 600;
                 letter-spacing: .1rem;
@@ -76,11 +76,12 @@
               font-weight: 160;
               line-height: 45px;
               margin: 0 0 2em;
-              max-width: 100px;
+              max-width: 90px;
               position: relative;
               text-decoration: none;
               text-transform: uppercase;
               width: 100%;
+
             }
             @media (min-width: 600px) {
               .btn {
