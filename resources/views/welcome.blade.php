@@ -8,7 +8,7 @@
         <!-- Favicon -->
         <link rel="shortcut icon" href="img/favicon.ico">
 
-        <title>{{ config('app.name') }} | Welcome</title>
+        <title>Welcome | {{ config('app.name') }} </title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
