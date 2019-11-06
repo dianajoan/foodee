@@ -164,7 +164,7 @@ return [
 
         /*
          * Package Service Providers...
-         */Zizaco\Entrust\EntrustServiceProvider::class,
+         */
 
         /*
          * Application Service Providers...
@@ -174,6 +174,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        // Permissions and Roles
+        Zizaco\Entrust\EntrustServiceProvider::class,
 
     ],
 
@@ -225,6 +227,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        // roles and perms
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
 
     ],
