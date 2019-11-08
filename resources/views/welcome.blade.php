@@ -191,7 +191,6 @@
                 <div class="links">
                     <a href="{{ route('about') }}">About</a>
                     <a href="{{ route('careers') }}">Careers</a>
-                    <a href="{{ route('offers') }}">Offers</a>
                     <a href="{{ route('faq') }}">Faq</a>
                     <a href="{{ route('help') }}">Help</a>
                     <a href="{{ route('privacy') }}">Privacy</a>

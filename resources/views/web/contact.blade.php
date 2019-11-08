@@ -3,73 +3,102 @@
 
 @section('content')
 
-<!-- breadcrumb -->  
-	<div class="container">	
-		<ol class="breadcrumb w3l-crumbs">
-			<li><a href="{{ url('/') }}"><i class="fa fa-home"></i> Home</a></li> 
-			<li class="active">Contact Us</li>
-		</ol>
-	</div>
-	<!-- //breadcrumb -->
-	<!-- contact -->
-	<div id="contact" class="contact cd-section">
-		<div class="container">
-			<h3 class="w3ls-title">Contact us</h3>
-			<p class="w3lsorder-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit sheets containing sed </p> 
-			<div class="contact-row agileits-w3layouts">  
-				<div class="col-xs-6 col-sm-6 contact-w3lsleft">
-					<div class="contact-grid agileits">
-						<h4>DROP US A LINE </h4>
-						<form action="#" method="post"> 
-							<input type="text" name="Name" placeholder="Name" required="">
-							<input type="email" name="Email" placeholder="Email" required=""> 
-							<input type="text" name="Phone Number" placeholder="Phone Number" required="">
-							<textarea name="Message" placeholder="Message..." required=""></textarea>
-							<input type="submit" value="Submit" >
-						</form> 
-					</div>
-				</div>
-				<div class="col-xs-6 col-sm-6 contact-w3lsright">
-					<h6><span>Sed interdum </span>interdum accumsan nec purus ac orci finibus facilisis. In sit amet placerat nisl in auctor sapien. </h6>
-					<div class="address-row">
-						<div class="col-xs-2 address-left">
-							<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-						</div>
-						<div class="col-xs-10 address-right">
-							<h5>Visit Us</h5>
-							<p>Kampala, Uganda </p>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="address-row w3-agileits">
-						<div class="col-xs-2 address-left">
-							<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-						</div>
-						<div class="col-xs-10 address-right">
-							<h5>Mail Us</h5>
-							<p><a href="mailto:info@example.com"> dianajoanita@900.com</a></p>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="address-row">
-						<div class="col-xs-2 address-left">
-							<span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
-						</div>
-						<div class="col-xs-10 address-right">
-							<h5>Call Us</h5>
-							<p>+256771991162</p>
-						</div>
-						<div class="clearfix"> </div>
-					</div>  
-				</div>
-				<div class="clearfix"> </div>
-			</div>	
-		</div>	
-		<!-- map -->
-		<div class="map agileits">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.948805392833!2d-73.99619098458929!3d40.71914347933105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27e2f24131%3A0x64ffc98d24069f02!2sCANADA!5e0!3m2!1sen!2sin!4v1479793484055"></iframe>
-		</div>
-		<!-- //map --> 
-	</div>
-	<!-- //contact -->   
+<!-- Breadcrumbs -->
+      <section class="breadcrumbs-custom-inset">
+        <div class="breadcrumbs-custom context-dark bg-overlay-39">
+          <div class="container">
+            <h2 class="breadcrumbs-custom-title">Contact Us</h2>
+            <ul class="breadcrumbs-custom-path">
+              <li><a href="index.html">Home</a></li>
+              <li class="active">Contact Us</li>
+            </ul>
+          </div>
+          <div class="box-position" style="background-image: url(images/bg-breadcrumbs.jpg);"></div>
+        </div>
+      </section>
+      <!-- Contact information-->
+      <section class="section section-md section-first bg-default">
+        <div class="container">
+          <div class="row row-30 justify-content-center">
+            <div class="col-sm-8 col-md-6 col-lg-4">
+              <article class="box-contacts">
+                <div class="box-contacts-body">
+                  <div class="box-contacts-icon fl-bigmug-line-cellphone55"></div>
+                  <div class="box-contacts-decor"></div>
+                  <p class="box-contacts-link"><a href="tel:#">+1 323-913-4688</a></p>
+                  <p class="box-contacts-link"><a href="tel:#">+1 323-888-4554</a></p>
+                </div>
+              </article>
+            </div>
+            <div class="col-sm-8 col-md-6 col-lg-4">
+              <article class="box-contacts">
+                <div class="box-contacts-body">
+                  <div class="box-contacts-icon fl-bigmug-line-up104"></div>
+                  <div class="box-contacts-decor"></div>
+                  <p class="box-contacts-link"><a href="#">4730 Crystal Springs Dr, Los Angeles, CA 90027</a></p>
+                </div>
+              </article>
+            </div>
+            <div class="col-sm-8 col-md-6 col-lg-4">
+              <article class="box-contacts">
+                <div class="box-contacts-body">
+                  <div class="box-contacts-icon fl-bigmug-line-chat55"></div>
+                  <div class="box-contacts-decor"></div>
+                  <p class="box-contacts-link"><a href="mailto:#">mail@demolink.org</a></p>
+                  <p class="box-contacts-link"><a href="mailto:#">info@demolink.org</a></p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Form and Gmap-->
+      <section class="section section-md section-last bg-default text-md-left">
+        <div class="container">
+          <div class="row row-50">
+            <div class="col-lg-6 section-map-small">
+              <div class="google-map-container" data-center="9870 St Vincent Place, Glasgow, DC 45 Fr 45." data-zoom="5" data-icon="images/gmap_marker.png" data-icon-active="images/gmap_marker_active.png" data-styles="[{&quot;featureType&quot;:&quot;administrative&quot;,&quot;elementType&quot;:&quot;labels.text.fill&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#444444&quot;}]},{&quot;featureType&quot;:&quot;landscape&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#f2f2f2&quot;}]},{&quot;featureType&quot;:&quot;poi&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;poi.business&quot;,&quot;elementType&quot;:&quot;geometry.fill&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;on&quot;}]},{&quot;featureType&quot;:&quot;road&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;saturation&quot;:-100},{&quot;lightness&quot;:45}]},{&quot;featureType&quot;:&quot;road.highway&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;simplified&quot;}]},{&quot;featureType&quot;:&quot;road.arterial&quot;,&quot;elementType&quot;:&quot;labels.icon&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;transit&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;water&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#b4d4e1&quot;},{&quot;visibility&quot;:&quot;on&quot;}]}]">
+                <div class="google-map"></div>
+                <ul class="google-map-markers">
+                  <li data-location="9870 St Vincent Place, Glasgow, DC 45 Fr 45." data-description="9870 St Vincent Place, Glasgow"></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <h4 class="text-spacing-50">Contact Form</h4>
+              <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+                <div class="row row-14 gutters-14">
+                  <div class="col-sm-6">
+                    <div class="form-wrap">
+                      <input class="form-input" id="contact-first-name" type="text" name="name" data-constraints="@Required">
+                      <label class="form-label" for="contact-first-name">First Name</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-wrap">
+                      <input class="form-input" id="contact-last-name" type="text" name="name" data-constraints="@Required">
+                      <label class="form-label" for="contact-last-name">Last Name</label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-wrap">
+                      <input class="form-input" id="contact-email" type="email" name="email" data-constraints="@Email @Required">
+                      <label class="form-label" for="contact-email">E-mail</label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-wrap">
+                      <label class="form-label" for="contact-message">Message</label>
+                      <textarea class="form-input" id="contact-message" name="message" data-constraints="@Required"></textarea>
+                    </div>
+                  </div>
+                </div>
+                <button class="button button-primary button-pipaluk" type="submit">Send Message</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+<a class="section section-banner" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" style="background-image: url(images/banner/background-03-1920x310.jpg); background-image: -webkit-image-set( url(images/banner/background-03-1920x310.jpg) 1x, url(images/banner/background-03-3840x620.jpg) 2x )"><img src="images/banner/foreground-03-1600x310.png" srcset="images/banner/foreground-03-1600x310.png 1x, images/banner/foreground-03-3200x620.png 2x" alt="" width="1600" height="310"></a>
 @endsection

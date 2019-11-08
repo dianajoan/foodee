@@ -10,7 +10,7 @@ class PagesController extends Controller
 	{
 		return view('home');
 	}
-	
+
 	public function about()
 	{
 		return view('web.about');
@@ -24,21 +24,6 @@ class PagesController extends Controller
 	public function careers()
 	{
 		return view('web.careers');
-	}
-
-	public function menu()
-	{
-		return view('web.menu');
-	}
-
-	public function offers()
-	{
-		return view('web.offers');
-	}
-
-	public function products()
-	{
-		return view('web.products');
 	}
 
 	public function faq()

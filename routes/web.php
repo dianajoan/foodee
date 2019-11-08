@@ -72,19 +72,6 @@ Route::group(['prefix' => 'home', 'middleware' => ['auth']], function()
 	]);
 });
 
-Route::group(['prefix' => 'home', 'middleware' => ['auth','verified']], function(){
-	// view the food menu
-	Route::get('menu', [
-		'as'  => 'menu',
-		'uses' => 'PagesController@menu',
-	]);
-	// view the food products
-	Route::get('products', [
-		'as'  => 'products',
-		'uses' => 'PagesController@products',
-	]);
-});
-
 Route::group(['prefix' => 'web', 'middleware' => 'web'], function(){
 	// about page
 	Route::get('about', [
@@ -100,11 +87,6 @@ Route::group(['prefix' => 'web', 'middleware' => 'web'], function(){
 	Route::get('careers', [
 		'as'  => 'careers',
 		'uses' => 'PagesController@careers',
-	]);
-	// offer page
-	Route::get('offers', [
-		'as'  => 'offers',
-		'uses' => 'PagesController@offers',
 	]);
 	// faq page
 	Route::get('faq', [
