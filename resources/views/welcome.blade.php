@@ -8,7 +8,7 @@
         <!-- Favicon -->
         <link rel="shortcut icon" href="img/favicon.ico">
 
-        <title>{{ config('app.name') }} | Welcome</title>
+        <title>Welcome | {{ config('app.name') }} </title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -21,7 +21,7 @@
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
-                background-image: url("https://images.pexels.com/photos/890515/pexels-photo-890515.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+                background-image: url("https://images.pexels.com/photos/2955817/pexels-photo-2955817.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
                 background-size: cover;
                 display: block;
                 background-attachment: fixed;
@@ -57,7 +57,7 @@
 
             .links > a {
                 color: #fff;
-                padding: 0 25px;
+                padding: 0 14px;
                 font-size: 13px;
                 font-weight: 600;
                 letter-spacing: .1rem;
@@ -73,14 +73,15 @@
               color: #fff;
               cursor: pointer;
               font-size: 16px;
-              font-weight: 100;
+              font-weight: 160;
               line-height: 45px;
               margin: 0 0 2em;
-              max-width: 100px;
+              max-width: 90px;
               position: relative;
               text-decoration: none;
               text-transform: uppercase;
               width: 100%;
+
             }
             @media (min-width: 600px) {
               .btn {
@@ -174,9 +175,14 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://twitter.com/LadyAnitanad" class="btn btn-5">Twitter</a>
-                    <a href="https://codepen.io/anitanad/" class="btn btn-5">Codepen</a>
-                    <a href="https://github.com/dianajoan"class="btn btn-5">GitHub</a>
+                    <a href="{{ route('about') }}">About</a>
+                    <a href="{{ route('careers') }}">Careers</a>
+                    <a href="{{ route('offers') }}">Offers</a>
+                    <a href="{{ route('faq') }}">Faq</a>
+                    <a href="{{ route('help') }}">Help</a>
+                    <a href="{{ route('privacy') }}">Privacy</a>
+                    <a href="{{ route('terms') }}">Terms</a>
+                    <a href="{{ route('contact') }}">Contact</a>
                 </div>
             </div>
         </div>
