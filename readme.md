@@ -69,7 +69,7 @@ This is how you can install this project on your local machine, computer or just
 7. Finally, run the development server:
     
     type 
-    Open your fav browser and type `localhost:8080`  or ```localhost/foodie/public``` to see our application home page
+    Open your fav browser and type `localhost:8080`  or ```localhost/foodee/public``` to see our application home page
 
 ### Licenses
 
