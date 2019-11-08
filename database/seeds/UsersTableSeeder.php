@@ -33,7 +33,7 @@ class UsersTableSeeder extends Seeder
         $user_super->attachRole(Role::where('name','super-admin')->first());
 
         $user_admin = new User();
-        $user_admin->name = 'Userone';
+        $user_admin->name = 'User one';
         $user_admin->email = 'admin@admin.com';
         $user_admin->password = Hash::make('dollar256');
         $user_admin->gender = 'Male';
