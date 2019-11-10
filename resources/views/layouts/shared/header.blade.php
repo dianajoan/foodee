@@ -11,7 +11,7 @@
                   <!-- RD Navbar Toggle-->
                   <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                   <!-- RD Navbar Brand-->
-                  <div class="rd-navbar-brand"><a class="brand" href="index.html"><img src="{{ asset('images/logo-default-196x47.png') }}" alt="" width="196" height="47"/></a></div>
+                  <div class="rd-navbar-brand" style=" color:blue; width='196'; height='47'; "><a class="brand" href="{{ url('/home') }}" >{{ config('app.name') }}</a></div>
                 </div>
                 <div class="rd-navbar-main-element">
                   <div class="rd-navbar-nav-wrap">
@@ -79,7 +79,7 @@
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('about') }}">About Us</a>
                       </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="typography.html">Typography</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link">{{ Auth::user()->name }}</a>
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('contact') }}">Contact Us</a>
                       </li>
@@ -114,19 +114,19 @@
                         <li>
                           <div class="unit unit-spacing-sm">
                             <div class="unit-left"><span class="icon fa fa-phone"></span></div>
-                            <div class="unit-body"><a class="link-phone" href="tel:#">+1 323-913-4688</a></div>
+                            <div class="unit-body"><a class="link-phone" href="tel:#">+256771991162</a></div>
                           </div>
                         </li>
                         <li>
                           <div class="unit unit-spacing-sm">
                             <div class="unit-left"><span class="icon fa fa-location-arrow"></span></div>
-                            <div class="unit-body"><a class="link-location" href="#">4730 Crystal Springs Dr, Los Angeles, CA 90027</a></div>
+                            <div class="unit-body"><a class="link-location" href="#">Kampala, Uganda</a></div>
                           </div>
                         </li>
                         <li>
                           <div class="unit unit-spacing-sm">
                             <div class="unit-left"><span class="icon fa fa-envelope"></span></div>
-                            <div class="unit-body"><a class="link-email" href="mailto:#">mail@demolink.org</a></div>
+                            <div class="unit-body"><a class="link-email" href="mailto:dianajoanita900@gmail.com">dianajoanita900@gmail.com</a></div>
                           </div>
                         </li>
                       </ul>
