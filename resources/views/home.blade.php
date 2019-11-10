@@ -13,7 +13,7 @@
                   <div class="col-md-10 col-xxl-6">
                     <div class="slider-modern-box">
                       <h1 class="slider-modern-title"><span data-caption-animate="slideInDown" data-caption-delay="0">Organic Food</span></h1>
-                      <p data-caption-animate="fadeInRight" data-caption-delay="400">Herber provides local citizens and guests of our town with quality organic fruits, vegetables, and other products.</p>
+                      <p data-caption-animate="fadeInRight" data-caption-delay="400">Foodee provides local citizens and guests of our town with quality organic fruits, vegetables, and other products.</p>
                       <div class="oh button-wrap"><a class="button button-primary button-ujarak" href="about-us.html" data-caption-animate="slideInLeft" data-caption-delay="400">Read more</a></div>
                     </div>
                   </div>
@@ -28,7 +28,7 @@
                   <div class="col-md-10 col-xxl-6">
                     <div class="slider-modern-box">
                       <h1 class="slider-modern-title"><span data-caption-animate="slideInLeft" data-caption-delay="0">Quality Control</span></h1>
-                      <p data-caption-animate="fadeInRight" data-caption-delay="400">We control the process of farming at Herber to deliver the best organic products to our customers throughout the state.</p>
+                      <p data-caption-animate="fadeInRight" data-caption-delay="400">We control the process of farming at Foodee to deliver the best organic products to our customers throughout the state.</p>
                       <div class="oh button-wrap"><a class="button button-primary button-ujarak" href="about-us.html" data-caption-animate="slideInLeft" data-caption-delay="400">Read more</a></div>
                     </div>
                   </div>
@@ -110,7 +110,7 @@
             <div class="col-sm-8 col-md-7 col-lg-6 wow fadeInLeft" data-wow-delay="0s">
               <div class="product-banner"><img src="{{ asset('images/home-banner-1-570x715.jpg') }}" alt="" width="570" height="715"/>
                 <div class="product-banner-content">
-                  <div class="product-banner-inner" style="background-image: url({{ asset('images/bg-brush.png')) }}">
+                  <div class="product-banner-inner" style="background-image: url({{ asset('images/bg-brush.png') }} )">
                     <h3 class="text-secondary-1">organic</h3>
                     <h2 class="text-primary">Vegetables</h2>
                   </div>
@@ -378,6 +378,6 @@
           </div>
         </div>
       </section>
-<a class="section section-banner" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" style="background-image: url({{ asset('images/banner/background-03-1920x310.jpg')) }}; background-image: -webkit-image-set( url({{ asset('images/banner/background-03-1920x310.jpg')) 1x, url({{ asset('images/banner/background-03-3840x620.jpg')) }} 2x )"><img src="{{ asset('images/banner/foreground-03-1600x310.png') }}" srcset="{{ asset('images/banner/foreground-03-1600x310.png 1x')) }}, {{ asset('images/banner/foreground-03-3200x620.png 2x')) }}" alt="" width="1600" height="310"></a>
+<a class="section section-banner" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" style="background-image: url({{ asset('images/banner/background-03-1920x310.jpg') }} ); background-image: -webkit-image-set( url({{ asset('images/banner/background-03-1920x310.jpg 1x') }} ), url({{ asset('images/banner/background-03-3840x620.jpg 2x') }} )"><img src="{{ asset('images/banner/foreground-03-1600x310.png') }}" srcset="{{ asset('images/banner/foreground-03-1600x310.png 1x') }}, {{ asset('images/banner/foreground-03-3200x620.png 2x') }}" alt="" width="1600" height="310"></a>
 
 @endsection

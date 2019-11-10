@@ -116,7 +116,7 @@
                         <li>
                           <div class="unit unit-spacing-sm">
                             <div class="unit-left"><span class="icon fa fa-phone"></span></div>
-                            <div class="unit-body"><a class="link-phone" href="tel:#">+256771991162</a></div>
+                            <div class="unit-body"><a class="link-phone" href="tel:+256771991162">+256771991162</a></div>
                           </div>
                         </li>
                         <li>

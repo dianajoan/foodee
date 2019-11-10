@@ -25,8 +25,8 @@
                 <div class="box-contacts-body">
                   <div class="box-contacts-icon fl-bigmug-line-cellphone55"></div>
                   <div class="box-contacts-decor"></div>
-                  <p class="box-contacts-link"><a href="tel:#">+256771991162</a></p>
-                  <p class="box-contacts-link"><a href="tel:#">+256752205132</a></p>
+                  <p class="box-contacts-link"><a href="tel:+256771991162">+256771991162</a></p>
+                  <p class="box-contacts-link"><a href="tel:+256752205132">+256752205132</a></p>
                 </div>
               </article>
             </div>
