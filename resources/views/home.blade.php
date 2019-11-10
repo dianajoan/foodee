@@ -309,7 +309,7 @@
                 <article class="thumbnail thumbnail-mary thumbnail-sm wow slideInLeft" data-wow-delay="0s">
                   <div class="thumbnail-mary-figure"><img src="{{ asset('images/grid-gallery-1-370x303.jpg') }}" alt="" width="370" height="303"/>
                   </div>
-                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-original-1-1200x800.jpg" data-lightgallery="item"><img src="{{ asset('images/grid-gallery-1-370x303.jpg') }}" alt="" width="370" height="303"/></a>
+                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="{{ asset('images/gallery-original-1-1200x800.jpg') }}" data-lightgallery="item"><img src="{{ asset('images/grid-gallery-1-370x303.jpg') }}" alt="" width="370" height="303"/></a>
                     <h4 class="thumbnail-mary-title"><a href="#">Watermelons</a></h4>
                   </div>
                 </article>
@@ -321,7 +321,7 @@
                 <article class="thumbnail thumbnail-mary thumbnail-sm wow slideInUp" data-wow-delay=".1s">
                   <div class="thumbnail-mary-figure"><img src="{{ asset('images/grid-gallery-2-370x303.jpg') }}" alt="" width="370" height="303"/>
                   </div>
-                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-original-2-1200x800.jpg" data-lightgallery="item"><img src="{{ asset('images/grid-gallery-2-370x303.jpg') }}" alt="" width="370" height="303"/></a>
+                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="{{ asset('images/gallery-original-2-1200x800.jpg') }}" data-lightgallery="item"><img src="{{ asset('images/grid-gallery-2-370x303.jpg') }}" alt="" width="370" height="303"/></a>
                     <h4 class="thumbnail-mary-title"><a href="#">Grapes</a></h4>
                   </div>
                 </article>
@@ -333,7 +333,7 @@
                 <article class="thumbnail thumbnail-mary thumbnail-sm wow slideInRight" data-wow-delay=".0s">
                   <div class="thumbnail-mary-figure"><img src="{{ asset('images/grid-gallery-3-370x303.jpg') }}" alt="" width="370" height="303"/>
                   </div>
-                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-original-3-800x1200.jpg" data-lightgallery="item"><img src="{{ asset('images/grid-gallery-3-370x303.jpg') }}" alt="" width="370" height="303"/></a>
+                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="{{ asset('images/gallery-original-3-800x1200.jpg') }}" data-lightgallery="item"><img src="{{ asset('images/grid-gallery-3-370x303.jpg') }}" alt="" width="370" height="303"/></a>
                     <h4 class="thumbnail-mary-title"><a href="#">Mandarin Oranges</a></h4>
                   </div>
                 </article>
@@ -345,7 +345,7 @@
                 <article class="thumbnail thumbnail-mary thumbnail-sm wow slideInUp" data-wow-delay=".1s">
                   <div class="thumbnail-mary-figure"><img src="{{ asset('images/grid-gallery-4-370x303.jpg') }}" alt="" width="370" height="303"/>
                   </div>
-                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-original-4-800x1200.jpg" data-lightgallery="item"><img src="{{ asset('images/grid-gallery-4-370x303.jpg') }}" alt="" width="370" height="303"/></a>
+                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="{{ asset('images/gallery-original-4-800x1200.jpg') }}" data-lightgallery="item"><img src="{{ asset('images/grid-gallery-4-370x303.jpg') }}" alt="" width="370" height="303"/></a>
                     <h4 class="thumbnail-mary-title"><a href="#">Lemons</a></h4>
                   </div>
                 </article>
@@ -357,7 +357,7 @@
                 <article class="thumbnail thumbnail-mary thumbnail-sm wow slideInLeft" data-wow-delay="0s">
                   <div class="thumbnail-mary-figure"><img src="{{ asset('images/grid-gallery-5-370x303.jpg') }}" alt="" width="370" height="303"/>
                   </div>
-                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-original-5-800x1200.jpg" data-lightgallery="item"><img src="{{ asset('images/grid-gallery-5-370x303.jpg') }}" alt="" width="370" height="303"/></a>
+                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="{{ asset('images/gallery-original-5-800x1200.jpg') }}" data-lightgallery="item"><img src="{{ asset('images/grid-gallery-5-370x303.jpg') }}" alt="" width="370" height="303"/></a>
                     <h4 class="thumbnail-mary-title"><a href="#">Organic Food</a></h4>
                   </div>
                 </article>
@@ -369,7 +369,7 @@
                 <article class="thumbnail thumbnail-mary thumbnail-sm wow slideInDown" data-wow-delay=".1s">
                   <div class="thumbnail-mary-figure"><img src="{{ asset('images/grid-gallery-6-370x303.jpg') }}" alt="" width="370" height="303"/>
                   </div>
-                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-original-6-1200x800.jpg" data-lightgallery="item"><img src="{{ asset('images/grid-gallery-6-370x303.jpg') }}" alt="" width="370" height="303"/></a>
+                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="{{ asset('images/gallery-original-6-1200x800.jpg') }}" data-lightgallery="item"><img src="{{ asset('images/grid-gallery-6-370x303.jpg') }}" alt="" width="370" height="303"/></a>
                     <h4 class="thumbnail-mary-title"><a href="#">Salad</a></h4>
                   </div>
                 </article>
@@ -378,6 +378,6 @@
           </div>
         </div>
       </section>
-<a class="section section-banner" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" style="background-image: url(images/banner/background-03-1920x310.jpg); background-image: -webkit-image-set( url(images/banner/background-03-1920x310.jpg) 1x, url(images/banner/background-03-3840x620.jpg) 2x )"><img src="{{ asset('images/banner/foreground-03-1600x310.png') }}" srcset="{{ asset('images/banner/foreground-03-1600x310.png 1x, images/banner/foreground-03-3200x620.png 2x') }}" alt="" width="1600" height="310"></a>
+<a class="section section-banner" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" style="background-image: url(images/banner/background-03-1920x310.jpg); background-image: -webkit-image-set( url(images/banner/background-03-1920x310.jpg) 1x, url(images/banner/background-03-3840x620.jpg) 2x )"><img src="{{ asset('images/banner/foreground-03-1600x310.png') }}" srcset="images/banner/foreground-03-1600x310.png 1x, images/banner/foreground-03-3200x620.png 2x" alt="" width="1600" height="310"></a>
 
 @endsection

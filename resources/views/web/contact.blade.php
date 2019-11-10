@@ -25,8 +25,8 @@
                 <div class="box-contacts-body">
                   <div class="box-contacts-icon fl-bigmug-line-cellphone55"></div>
                   <div class="box-contacts-decor"></div>
-                  <p class="box-contacts-link"><a href="tel:#">+1 323-913-4688</a></p>
-                  <p class="box-contacts-link"><a href="tel:#">+1 323-888-4554</a></p>
+                  <p class="box-contacts-link"><a href="tel:#">+256771991162</a></p>
+                  <p class="box-contacts-link"><a href="tel:#">+256752205132</a></p>
                 </div>
               </article>
             </div>
@@ -35,7 +35,7 @@
                 <div class="box-contacts-body">
                   <div class="box-contacts-icon fl-bigmug-line-up104"></div>
                   <div class="box-contacts-decor"></div>
-                  <p class="box-contacts-link"><a href="#">4730 Crystal Springs Dr, Los Angeles, CA 90027</a></p>
+                  <p class="box-contacts-link"><a href="#">4730 Kampala, Uganda</a></p>
                 </div>
               </article>
             </div>
@@ -44,8 +44,8 @@
                 <div class="box-contacts-body">
                   <div class="box-contacts-icon fl-bigmug-line-chat55"></div>
                   <div class="box-contacts-decor"></div>
-                  <p class="box-contacts-link"><a href="mailto:#">mail@demolink.org</a></p>
-                  <p class="box-contacts-link"><a href="mailto:#">info@demolink.org</a></p>
+                  <p class="box-contacts-link"><a href="mailto:dianajoanita900@gmail.com">dianajoanita900@gmail.com</a></p>
+                  <p class="box-contacts-link"><a href="mailto:#">info@gmail.com</a></p>
                 </div>
               </article>
             </div>
@@ -100,5 +100,5 @@
           </div>
         </div>
       </section>
-<a class="section section-banner" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" style="background-image: url(images/banner/background-03-1920x310.jpg); background-image: -webkit-image-set( url(images/banner/background-03-1920x310.jpg) 1x, url(images/banner/background-03-3840x620.jpg) 2x )"><img src="images/banner/foreground-03-1600x310.png" srcset="images/banner/foreground-03-1600x310.png 1x, images/banner/foreground-03-3200x620.png 2x" alt="" width="1600" height="310"></a>
+<a class="section section-banner" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" style="background-image: url(images/banner/background-03-1920x310.jpg); background-image: -webkit-image-set( url(images/banner/background-03-1920x310.jpg) 1x, url(images/banner/background-03-3840x620.jpg) 2x )"><img src="{{ asset('images/banner/foreground-03-1600x310.png') }}" srcset="images/banner/foreground-03-1600x310.png 1x, images/banner/foreground-03-3200x620.png 2x" alt="" width="1600" height="310"></a>
 @endsection

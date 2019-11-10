@@ -11,7 +11,7 @@
                   <!-- RD Navbar Toggle-->
                   <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                   <!-- RD Navbar Brand-->
-                  <div class="rd-navbar-brand"><a class="brand" href="index.html"><img src="images/logo-default-196x47.png" alt="" width="196" height="47"/></a></div>
+                  <div class="rd-navbar-brand"><a class="brand" href="index.html"><img src="{{ asset('images/logo-default-196x47.png') }}" alt="" width="196" height="47"/></a></div>
                 </div>
                 <div class="rd-navbar-main-element">
                   <div class="rd-navbar-nav-wrap">
@@ -26,7 +26,7 @@
                         <div class="cart-inline-body">
                           <div class="cart-inline-item">
                             <div class="unit align-items-center">
-                              <div class="unit-left"><a class="cart-inline-figure" href="#"><img src="images/product-mini-1-108x100.png" alt="" width="108" height="100"/></a></div>
+                              <div class="unit-left"><a class="cart-inline-figure" href="#"><img src="{{ asset('images/product-mini-1-108x100.png') }}" alt="" width="108" height="100"/></a></div>
                               <div class="unit-body">
                                 <h6 class="cart-inline-name"><a href="#">Blueberries</a></h6>
                                 <div>
@@ -42,7 +42,7 @@
                           </div>
                           <div class="cart-inline-item">
                             <div class="unit align-items-center">
-                              <div class="unit-left"><a class="cart-inline-figure" href="#"><img src="images/product-mini-2-108x100.png" alt="" width="108" height="100"/></a></div>
+                              <div class="unit-left"><a class="cart-inline-figure" href="#"><img src="{{ asset('images/product-mini-2-108x100.png') }}" alt="" width="108" height="100"/></a></div>
                               <div class="unit-body">
                                 <h6 class="cart-inline-name"><a href="#">Avocados</a></h6>
                                 <div>
@@ -75,13 +75,13 @@
                     </div>
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
-                      <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a>
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="{{ url('/home') }}">Home</a>
                       </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.html">About Us</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('about') }}">About Us</a>
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="typography.html">Typography</a>
                       </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="contact-us.html">Contact Us</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('contact') }}">Contact Us</a>
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('logout') }}" class="hash" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="col-12"> Logout </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;"> @csrf </form>
@@ -107,7 +107,7 @@
                       <p>We are always ready to provide you with fresh organic products for your home or office. Contact us to find out how we can help you.</p>
                       <div class="heading-6 subtitle">Our Contacts</div>
                       <div class="row row-10 gutters-10">
-                        <div class="col-12"><img src="images/home-sidebar-394x255.jpg" alt="" width="394" height="255"/>
+                        <div class="col-12"><img src="{{ asset('images/home-sidebar-394x255.jpg') }}" alt="" width="394" height="255"/>
                         </div>
                       </div>
                       <ul class="rd-navbar-modern-contacts">
