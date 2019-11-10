@@ -1,4 +1,4 @@
-@extends('layouts.mas')
+@extends('layouts.master')
 @section('title', 'FAQ')
 
 @section('content')
