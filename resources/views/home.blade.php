@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Home') 
+@section('title') Home @endsection
 
 @section('content')
 
@@ -110,7 +110,7 @@
             <div class="col-sm-8 col-md-7 col-lg-6 wow fadeInLeft" data-wow-delay="0s">
               <div class="product-banner"><img src="{{ asset('images/home-banner-1-570x715.jpg') }}" alt="" width="570" height="715"/>
                 <div class="product-banner-content">
-                  <div class="product-banner-inner" style="background-image: url(images/bg-brush.png)">
+                  <div class="product-banner-inner" style="background-image: url({{ asset('images/bg-brush.png')) }}">
                     <h3 class="text-secondary-1">organic</h3>
                     <h2 class="text-primary">Vegetables</h2>
                   </div>
@@ -378,6 +378,6 @@
           </div>
         </div>
       </section>
-<a class="section section-banner" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" style="background-image: url(images/banner/background-03-1920x310.jpg); background-image: -webkit-image-set( url(images/banner/background-03-1920x310.jpg) 1x, url(images/banner/background-03-3840x620.jpg) 2x )"><img src="{{ asset('images/banner/foreground-03-1600x310.png') }}" srcset="images/banner/foreground-03-1600x310.png 1x, images/banner/foreground-03-3200x620.png 2x" alt="" width="1600" height="310"></a>
+<a class="section section-banner" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" style="background-image: url({{ asset('images/banner/background-03-1920x310.jpg')) }}; background-image: -webkit-image-set( url({{ asset('images/banner/background-03-1920x310.jpg')) 1x, url({{ asset('images/banner/background-03-3840x620.jpg')) }} 2x )"><img src="{{ asset('images/banner/foreground-03-1600x310.png') }}" srcset="{{ asset('images/banner/foreground-03-1600x310.png 1x')) }}, {{ asset('images/banner/foreground-03-3200x620.png 2x')) }}" alt="" width="1600" height="310"></a>
 
 @endsection

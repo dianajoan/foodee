@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'About')
+@section('title') About @endsection
 
 @section('content')
     
@@ -13,7 +13,7 @@
               <li class="active">About Us</li>
             </ul>
           </div>
-          <div class="box-position" style="background-image: url(images/bg-breadcrumbs.jpg);"></div>
+          <div class="box-position" style="background-image: url({{ asset('images/bg-breadcrumbs.jpg' ) }});"></div>
         </div>
       </section>
       <!-- Why choose us-->
@@ -223,5 +223,5 @@
           <div class="owl-carousel owl-clients owl-dots-secondary" data-items="1" data-sm-items="2" data-md-items="3" data-lg-items="4" data-margin="30" data-dots="true" data-animation-in="fadeIn" data-animation-out="fadeOut"><a class="clients-modern" href="#"><img src="{{ asset('images/clients-1-270x145.png') }}" alt="" width="270" height="145"/></a><a class="clients-modern" href="#"><img src="{{ asset('images/clients-2-270x145.png') }}" alt="" width="270" height="145"/></a><a class="clients-modern" href="#"><img src="{{ asset('images/clients-3-270x145.png') }}" alt="" width="270" height="145"/></a><a class="clients-modern" href="#"><img src="{{ asset('images/clients-4-270x145.png') }}" alt="" width="270" height="145"/></a></div>
         </div>
       </section>
-<a class="section section-banner" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" style="background-image: url(images/banner/background-03-1920x310.jpg); background-image: -webkit-image-set( url(images/banner/background-03-1920x310.jpg) 1x, url(images/banner/background-03-3840x620.jpg) 2x )"><img src="{{ asset('images/banner/foreground-03-1600x310.png') }}" srcset="images/banner/foreground-03-1600x310.png 1x, images/banner/foreground-03-3200x620.png 2x" alt="" width="1600" height="310"></a>
+<a class="section section-banner" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" style="background-image: url({{ asset('images/banner/background-03-1920x310.jpg') }} ); background-image: -webkit-image-set( url({{ asset('images/banner/background-03-1920x310.jpg 1x') }} ), url({{ asset('images/banner/background-03-3840x620.jpg 2x') }} )"><img src="{{ asset('images/banner/foreground-03-1600x310.png') }}" srcset="{{ asset('images/banner/foreground-03-1600x310.png 1x') }}, {{ asset('images/banner/foreground-03-3200x620.png 2x') }}" alt="" width="1600" height="310"></a>
 @endsection

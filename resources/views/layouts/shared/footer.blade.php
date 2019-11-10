@@ -6,8 +6,8 @@
           <div class="col-sm-6 col-lg-4 col-xl-3">
             <div class="oh-desktop">
               <div class="wow slideInRight" data-wow-delay="0s">
-                <div class="footer-brand"><a href="index.html"><img src="{{ asset('images/logo-inverse-196x42.png') }}" alt="" width="196" height="42"/></a></div>
-                <p>{{ config('app.name') }} is an organic restaurant located in California. We offer healthy foods and products to our clients.</p>
+                <div class="footer-brand"><a href="{{ url('/home') }}">{{ config('app.name') }}</a></div>
+                <p>{{ config('app.name') }} is an organic restaurant located in Kampala, Uganda. We offer healthy foods and products to our clients.</p>
                 <ul class="footer-contacts d-inline-block d-md-block">
                   <li>
                     <div class="unit unit-spacing-xs">
@@ -113,6 +113,12 @@
         <div class="group-sm group-sm-justify">
           <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span> <span>{{ config('app.name') }}</span>. All rights reserved
           </p>
+
+          <p class="rights"><a href="{{ route('faq') }}">FAQ</a></p>
+          <p class="rights"><a href="{{ route('help') }}">Help</a></p>
+          <p class="rights"><a href="{{ route('privacy') }}">Privacy</a></p>
+          <p class="rights"><a href="{{ route('terms') }}">Terms</a></p>
+
           <p class="rights">Design&nbsp;by&nbsp;<a href="mailto:dianajoanita900@gmail.com">Diana Joanita</a></p>
         </div>
       </div>

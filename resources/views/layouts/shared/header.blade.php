@@ -11,7 +11,7 @@
                   <!-- RD Navbar Toggle-->
                   <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                   <!-- RD Navbar Brand-->
-                  <div class="rd-navbar-brand" style=" color:blue; width='196'; height='47'; "><a class="brand" href="{{ url('/home') }}" >{{ config('app.name') }}</a></div>
+                  <div class="rd-navbar-brand"><a class="brand" href="{{ url('/home') }}" >{{ config('app.name') }}</a></div>
                 </div>
                 <div class="rd-navbar-main-element">
                   <div class="rd-navbar-nav-wrap">
@@ -79,9 +79,11 @@
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('about') }}">About Us</a>
                       </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link">{{ Auth::user()->name }}</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('careers') }}">Careers</a>
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('contact') }}">Contact Us</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link">{{ Auth::user()->name }}</a>
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('logout') }}" class="hash" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="col-12"> Logout </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;"> @csrf </form>
