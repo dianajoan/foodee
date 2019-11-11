@@ -98,4 +98,5 @@
 		</div>
 	</div>
 	<!-- //help-page -->
+<a class="section section-banner" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" style="background-image: url({{ asset('images/banner/background-03-1920x310.jpg') }} ); background-image: -webkit-image-set( url({{ asset('images/banner/background-03-1920x310.jpg 1x') }} ), url({{ asset('images/banner/background-03-3840x620.jpg 2x') }} )"><img src="{{ asset('images/banner/foreground-03-1600x310.png') }}" srcset="{{ asset('images/banner/foreground-03-1600x310.png 1x') }}, {{ asset('images/banner/foreground-03-3200x620.png 2x') }}" alt="" width="1600" height="310"></a>
 @endsection
