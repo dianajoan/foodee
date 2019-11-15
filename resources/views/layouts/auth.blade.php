@@ -3,28 +3,56 @@
 	<head>
 		<title>@yield('title') | {{ config('app.name') }}</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-		<!-- Custom Theme files -->
-		<link href="{!! asset('css/bootstrap.css') !!}" type="text/css" rel="stylesheet" media="all">
-		<link href="{!! asset('css/style.css') !!}" type="text/css" rel="stylesheet" media="all">  
-		<link href="{!! asset('css/font-awesome.css') !!}" rel="stylesheet"> <!-- font-awesome icons -->
-		<link rel="stylesheet" href="{!! asset('css/owl.carousel.css') !!}" type="text/css" media="all"/> <!-- Owl-Carousel-CSS -->
-		<!-- //Custom Theme files --> 
-		<!-- Favicon -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--===============================================================================================-->	
+		<link rel="icon" type="image/png" href="{{ asset('images/icons/favicon.ico') }}">
+	<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
+	<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{ asset('fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+	<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{ asset('fonts/iconic/css/material-design-iconic-font.min.css') }}">
+	<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{ asset('vendor/animate/animate.css') }}">
+	<!--===============================================================================================-->	
+		<link rel="stylesheet" type="text/css" href="{{ asset('vendor/css-hamburgers/hamburgers.min.css') }}">
+	<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{ asset('vendor/animsition/css/animsition.min.css') }}">
+	<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{ asset('vendor/select2/select2.min.css') }}">
+	<!--===============================================================================================-->	
+		<link rel="stylesheet" type="text/css" href="{{ asset('vendor/daterangepicker/daterangepicker.css') }}">
+	<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{ asset('css/util.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
+	<!--===============================================================================================-->
+	<!-- Favicon -->
 		<link rel="shortcut icon" href="{!! asset('img/favicon.ico') !!}">
+	<!--
+		===============================================================================================-->
 
-		<!-- js -->
-		<script src="{!! asset('js/jquery-2.2.3.min.js') !!}"></script>  
-		<!-- //js -->
-		<!-- web-fonts -->   
-		<link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet"> 
-		<link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
-		<!-- //web-fonts -->
 	</head>
-	<body> 
+	<body>
 
 		@yield('content')
-		
+
+		<!--===============================================================================================-->
+		<script src="{{ asset('vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+	<!--===============================================================================================-->
+		<script src="{{ asset('vendor/animsition/js/animsition.min.js') }}"></script>
+	<!--===============================================================================================-->
+		<script src="{{ asset('vendor/bootstrap/js/popper.js') }}"></script>
+		<script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+	<!--===============================================================================================-->
+		<script src="{{ asset('vendor/select2/select2.min.js') }}"></script>
+	<!--===============================================================================================-->
+		<script src="{{ asset('vendor/daterangepicker/moment.min.js') }}"></script>
+		<script src="{{ asset('vendor/daterangepicker/daterangepicker.js') }}"></script>
+	<!--===============================================================================================-->
+		<script src="{{ asset('vendor/countdowntime/countdowntime.js') }}"></script>
+	<!--===============================================================================================-->
+		<script src="{{ asset('js/main.js') }}"></script>
+			
 	</body>
 </html>

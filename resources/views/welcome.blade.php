@@ -8,7 +8,7 @@
         <!-- Favicon -->
         <link rel="shortcut icon" href="img/favicon.ico">
 
-        <title>Welcome | {{ config('app.name') }} </title>
+        <title>Foodee - Online Delivery Service</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -189,13 +189,8 @@
                 </div>
 
                 <div class="links">
-                    <a href="{{ route('about') }}">About</a>
-                    <a href="{{ route('careers') }}">Careers</a>
-                    <a href="{{ route('faq') }}">Faq</a>
-                    <a href="{{ route('help') }}">Help</a>
-                    <a href="{{ route('privacy') }}">Privacy</a>
-                    <a href="{{ route('terms') }}">Terms</a>
-                    <a href="{{ route('contact') }}">Contact</a>
+                    <a href="maito:dianajoanita900@gmail.com">Contact</a>
+                    <a href="https://anitanad.wordpress.com/">Blog</a>
                 </div>
             </div>
         </div>

@@ -3,6 +3,20 @@
 
 @section('content')
 
+	<!-- Breadcrumbs -->
+      <section class="breadcrumbs-custom-inset">
+        <div class="breadcrumbs-custom context-dark bg-overlay-46">
+          <div class="container">
+            <h2 class="breadcrumbs-custom-title">How can we help</h2>
+            <ul class="breadcrumbs-custom-path">
+              <li><a href="index.html">Home</a></li>
+              <li class="active">Help</li>
+            </ul>
+          </div>
+          <div class="box-position" style="background-image: url({{ asset('images/bg-breadcrumbs.jpg' ) }});"></div>
+        </div>
+      </section>
+
 	<!-- help-page -->
 	<div class="help about">
 		<div class="container"> 
