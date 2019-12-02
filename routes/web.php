@@ -14,7 +14,7 @@
 Auth::routes();
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -77,6 +77,41 @@ Route::group(['prefix' => 'web', 'middleware' => 'web'], function(){
 	Route::get('about', [
 		'as' 	=> 'about',
 		'uses' 	=> 'PagesController@about',
+	]);
+	// blog page
+	Route::get('blog', [
+		'as' 	=> 'blog',
+		'uses' 	=> 'PagesController@blog',
+	]);
+	// blog page
+	Route::get('blogsingle', [
+		'as' 	=> 'blog-single',
+		'uses' 	=> 'PagesController@blogsingle',
+	]);
+	// cart page
+	Route::get('cart', [
+		'as' 	=> 'cart',
+		'uses' 	=> 'PagesController@cart',
+	]);
+	// checkout page
+	Route::get('checkout', [
+		'as' 	=> 'checkout',
+		'uses' 	=> 'PagesController@checkout',
+	]);
+	// product-single page
+	Route::get('productsingle', [
+		'as' 	=> 'product-single',
+		'uses' 	=> 'PagesController@productsingle',
+	]);
+	// shop page
+	Route::get('shop', [
+		'as' 	=> 'shop',
+		'uses' 	=> 'PagesController@shop',
+	]);
+	// wishlist page
+	Route::get('wishlist', [
+		'as' 	=> 'wishlist',
+		'uses' 	=> 'PagesController@wishlist',
 	]);
 	// contact page
 	Route::get('contact', [
