@@ -1,75 +1,71 @@
 @extends('layouts.master')
-@section('title', 'Contact')
+@section('title') Contact @endsection
 
 @section('content')
 
-<!-- breadcrumb -->  
-	<div class="container">	
-		<ol class="breadcrumb w3l-crumbs">
-			<li><a href="{{ url('/') }}"><i class="fa fa-home"></i> Home</a></li> 
-			<li class="active">Contact Us</li>
-		</ol>
-	</div>
-	<!-- //breadcrumb -->
-	<!-- contact -->
-	<div id="contact" class="contact cd-section">
-		<div class="container">
-			<h3 class="w3ls-title">Contact us</h3>
-			<p class="w3lsorder-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit sheets containing sed </p> 
-			<div class="contact-row agileits-w3layouts">  
-				<div class="col-xs-6 col-sm-6 contact-w3lsleft">
-					<div class="contact-grid agileits">
-						<h4>DROP US A LINE </h4>
-						<form action="#" method="post"> 
-							<input type="text" name="Name" placeholder="Name" required="">
-							<input type="email" name="Email" placeholder="Email" required=""> 
-							<input type="text" name="Phone Number" placeholder="Phone Number" required="">
-							<textarea name="Message" placeholder="Message..." required=""></textarea>
-							<input type="submit" value="Submit" >
-						</form> 
-					</div>
-				</div>
-				<div class="col-xs-6 col-sm-6 contact-w3lsright">
-					<h6><span>Sed interdum </span>interdum accumsan nec purus ac orci finibus facilisis. In sit amet placerat nisl in auctor sapien. </h6>
-					<div class="address-row">
-						<div class="col-xs-2 address-left">
-							<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-						</div>
-						<div class="col-xs-10 address-right">
-							<h5>Visit Us</h5>
-							<p>Kampala, Uganda </p>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="address-row w3-agileits">
-						<div class="col-xs-2 address-left">
-							<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-						</div>
-						<div class="col-xs-10 address-right">
-							<h5>Mail Us</h5>
-							<p><a href="mailto:info@example.com"> dianajoanita@900.com</a></p>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="address-row">
-						<div class="col-xs-2 address-left">
-							<span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
-						</div>
-						<div class="col-xs-10 address-right">
-							<h5>Call Us</h5>
-							<p>+256771991162</p>
-						</div>
-						<div class="clearfix"> </div>
-					</div>  
-				</div>
-				<div class="clearfix"> </div>
-			</div>	
-		</div>	
-		<!-- map -->
-		<div class="map agileits">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.948805392833!2d-73.99619098458929!3d40.71914347933105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27e2f24131%3A0x64ffc98d24069f02!2sCANADA!5e0!3m2!1sen!2sin!4v1479793484055"></iframe>
-		</div>
-		<!-- //map --> 
-	</div>
-	<!-- //contact -->   
+<div class="hero-wrap hero-bread" style="background-image: url({{ asset('assets/images/bg_1.jpg') }} );">
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center">
+            <p class="breadcrumbs"><span class="mr-2"><a href="{{ url('/') }}">Home</a></span></p>
+            <h1 class="mb-0 bread">Contact us</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="ftco-section contact-section bg-light">
+      <div class="container">
+        <div class="row d-flex mb-5 contact-info">
+          <div class="w-100"></div>
+          <div class="col-md-3 d-flex">
+            <div class="info bg-white p-4">
+              <p><span>Address:</span> Kampala, Uganda</p>
+            </div>
+          </div>
+          <div class="col-md-3 d-flex">
+            <div class="info bg-white p-4">
+              <p><span>Phone:</span> <a href="tel://1234567920">+256 771991162</a></p>
+            </div>
+          </div>
+          <div class="col-md-3 d-flex">
+            <div class="info bg-white p-4">
+              <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@foodee.com</a></p>
+            </div>
+          </div>
+          <div class="col-md-3 d-flex">
+            <div class="info bg-white p-4">
+              <p><span>Website</span> <a href="#">foodee.com</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="row block-9">
+          <div class="col-md-6 order-md-last d-flex">
+            <form action="#" class="bg-white p-5 contact-form">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Name">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Email">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Subject">
+              </div>
+              <div class="form-group">
+                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+              </div>
+            </form>
+          
+          </div>
+
+          <div class="col-md-6 d-flex">
+            <div id="map" class="bg-white"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
 @endsection

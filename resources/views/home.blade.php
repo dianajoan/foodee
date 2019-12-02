@@ -1,260 +1,513 @@
 @extends('layouts.master')
-@section('title', 'Home') 
+@section('title') Home @endsection
 
 @section('content')
 
-<!-- add-products -->
-    <div class="add-products">  
-        <div class="container">
-            <div class="add-products-row">
-                <div class="w3ls-add-grids">
-                    <a href="{{ route('menu') }}"> 
-                        <h4>Get <span>20%<br>Cashback</span></h4>
-                        <h5>Ordered in mobile app only </h5>
-                        <h6>Order Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
+<!-- Swiper-->
+      <section id="home-section" class="hero">
+      <div class="home-slider owl-carousel">
+        <div class="slider-item" style="background-image: url({{ asset('assets/images/bg_1.jpg') }} );">
+          <div class="overlay"></div>
+          <div class="container">
+            <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+
+              <div class="col-md-12 ftco-animate text-center">
+                <h1 class="mb-2">We serve Fresh Vegestables &amp; Fruits</h1>
+                <h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2>
+                <p><a href="#" class="btn btn-primary">View Details</a></p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="slider-item" style="background-image: url({{ asset('assets/images/bg_2.jpg') }} );">
+          <div class="overlay"></div>
+          <div class="container">
+            <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+
+              <div class="col-sm-12 ftco-animate text-center">
+                <h1 class="mb-2">100% Fresh &amp; Organic Foods</h1>
+                <h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2>
+                <p><a href="#" class="btn btn-primary">View Details</a></p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section">
+      <div class="container">
+        <div class="row no-gutters ftco-services">
+          <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services mb-md-0 mb-4">
+              <div class="icon bg-color-1 active d-flex justify-content-center align-items-center mb-2">
+                <span class="flaticon-shipped"></span>
+              </div>
+              <div class="media-body">
+                <h3 class="heading">Free Shipping</h3>
+                <span>On order over $100</span>
+              </div>
+            </div>      
+          </div>
+          <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services mb-md-0 mb-4">
+              <div class="icon bg-color-2 d-flex justify-content-center align-items-center mb-2">
+                <span class="flaticon-diet"></span>
+              </div>
+              <div class="media-body">
+                <h3 class="heading">Always Fresh</h3>
+                <span>Product well package</span>
+              </div>
+            </div>    
+          </div>
+          <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services mb-md-0 mb-4">
+              <div class="icon bg-color-3 d-flex justify-content-center align-items-center mb-2">
+                <span class="flaticon-award"></span>
+              </div>
+              <div class="media-body">
+                <h3 class="heading">Superior Quality</h3>
+                <span>Quality Products</span>
+              </div>
+            </div>      
+          </div>
+          <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services mb-md-0 mb-4">
+              <div class="icon bg-color-4 d-flex justify-content-center align-items-center mb-2">
+                <span class="flaticon-customer-service"></span>
+              </div>
+              <div class="media-body">
+                <h3 class="heading">Support</h3>
+                <span>24/7 Support</span>
+              </div>
+            </div>      
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section ftco-category ftco-no-pt">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-6 order-md-last align-items-stretch d-flex">
+                <div class="category-wrap-2 ftco-animate img align-self-stretch d-flex" style="background-image: url({{ asset('assets/images/category.jpg') }} );">
+                  <div class="text text-center">
+                    <h2>Vegetables</h2>
+                    <p>Protect the health of every home</p>
+                    <p><a href="#" class="btn btn-primary">Shop now</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image: url({{ asset('assets/images/category-1.jpg') }} );">
+                  <div class="text px-3 py-1">
+                    <h2 class="mb-0"><a href="#">Fruits</a></h2>
+                  </div>
+                </div>
+                <div class="category-wrap ftco-animate img d-flex align-items-end" style="background-image: url({{ asset('assets/images/category-2.jpg') }} );">
+                  <div class="text px-3 py-1">
+                    <h2 class="mb-0"><a href="#">Vegetables</a></h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image: url({{ asset('assets/images/category-3.jpg') }} );">
+              <div class="text px-3 py-1">
+                <h2 class="mb-0"><a href="#">Juices</a></h2>
+              </div>    
+            </div>
+            <div class="category-wrap ftco-animate img d-flex align-items-end" style="background-image: url({{ asset('assets/images/category-4.jpg') }} );">
+              <div class="text px-3 py-1">
+                <h2 class="mb-0"><a href="#">Dried</a></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section">
+      <div class="container">
+        <div class="row justify-content-center mb-3 pb-3">
+          <div class="col-md-12 heading-section text-center ftco-animate">
+            <span class="subheading">Featured Products</span>
+            <h2 class="mb-4">Our Products</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+          </div>
+        </div>      
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3 ftco-animate">
+            <div class="product">
+              <a href="#" class="img-prod"><img class="img-fluid" src="{{ asset('assets/images/product-1.jpg') }}" alt="Colorlib Template">
+                <span class="status">30%</span>
+                <div class="overlay"></div>
+              </a>
+              <div class="text py-3 pb-4 px-3 text-center">
+                <h3><a href="#">Bell Pepper</a></h3>
+                <div class="d-flex">
+                  <div class="pricing">
+                    <p class="price"><span class="mr-2 price-dc">$120.00</span><span class="price-sale">$80.00</span></p>
+                  </div>
+                </div>
+                <div class="bottom-area d-flex px-3">
+                  <div class="m-auto d-flex">
+                    <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                      <span><i class="ion-ios-menu"></i></span>
                     </a>
-                </div>
-                <div class="w3ls-add-grids w3ls-add-grids-right">
-                    <a href="{{ route('menu') }}"> 
-                        <h4>GET Upto<span><br>40% Offer</span></h4>
-                        <h5>Sunday special discount</h5>
-                        <h6>Order Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
+                    <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+                      <span><i class="ion-ios-cart"></i></span>
                     </a>
-                </div> 
-                <div class="clearfix"> </div> 
-            </div>       
-        </div>
-    </div>
-    <!-- //add-products --> 
-    <!-- order -->      
-    <div class="wthree-order">  
-        <img src="{!! asset('images/i2.jpg') !!}" class="w3order-img" alt=""/>
-        <div class="container">
-            <h3 class="w3ls-title">How To Order Online Food</h3>
-            <p class="w3lsorder-text">Get your favourite food in 4 simple steps.</p>
-            <div class="order-agileinfo">  
-                <div class="col-md-3 col-sm-3 col-xs-6 order-w3lsgrids"> 
-                    <div class="order-w3text"> 
-                        <i class="fa fa-map" aria-hidden="true"></i> 
-                        <h5>Search Area</h5>
-                        <span>1</span>
-                    </div>
+                    <a href="#" class="heart d-flex justify-content-center align-items-center ">
+                      <span><i class="ion-ios-heart"></i></span>
+                    </a>
+                  </div>
                 </div>
-                <div class="col-md-3 col-sm-3 col-xs-6 order-w3lsgrids"> 
-                    <div class="order-w3text"> 
-                        <i class="fa fa-cutlery" aria-hidden="true"></i> 
-                        <h5>Choose Food</h5>
-                        <span>2</span>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-6 order-w3lsgrids"> 
-                    <div class="order-w3text"> 
-                        <i class="fa fa-credit-card" aria-hidden="true"></i>
-                        <h5>Pay Money</h5>
-                        <span>3</span>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-6 order-w3lsgrids"> 
-                    <div class="order-w3text"> 
-                        <i class="fa fa-truck" aria-hidden="true"></i>
-                        <h5>Enjoy Food</h5>
-                        <span>4</span>
-                    </div>
-                </div>
-                <div class="clearfix"> </div> 
+              </div>
             </div>
-        </div>
-    </div>
-    <!-- //order -->    
-    <!-- deals -->
-    <div class="w3agile-deals">
-        <div class="container">
-            <h3 class="w3ls-title">Special Services</h3>
-            <div class="dealsrow">
-                <div class="col-md-6 col-sm-6 deals-grids">
-                    <div class="deals-left">
-                        <i class="fa fa-truck" aria-hidden="true"></i>
-                    </div> 
-                    <div class="deals-right">
-                        <h4>FREE DELIVERY</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
-                    </div> 
-                    <div class="clearfix"> </div>
-                </div> 
-                <div class="col-md-6 col-sm-6 deals-grids">
-                    <div class="deals-left">
-                        <i class="fa fa-birthday-cake" aria-hidden="true"></i>
-                    </div> 
-                    <div class="deals-right">
-                        <h4>Party Orders</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
-                    </div> 
-                    <div class="clearfix"> </div>
+          </div>
+          <div class="col-md-6 col-lg-3 ftco-animate">
+            <div class="product">
+              <a href="#" class="img-prod"><img class="img-fluid" src="{{ asset('assets/images/product-2.jpg') }}" alt="Colorlib Template">
+                <div class="overlay"></div>
+              </a>
+              <div class="text py-3 pb-4 px-3 text-center">
+                <h3><a href="#">Strawberry</a></h3>
+                <div class="d-flex">
+                  <div class="pricing">
+                    <p class="price"><span>$120.00</span></p>
+                  </div>
                 </div>
-                <div class="col-md-6 col-sm-6 deals-grids">
-                    <div class="deals-left">
-                        <i class="fa fa-users" aria-hidden="true"></i>
-                    </div> 
-                    <div class="deals-right">
-                        <h4>Team up Scheme</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div> 
-                <div class="col-md-6 col-sm-6 deals-grids">
-                    <div class="deals-left">
-                        <i class="fa fa-building" aria-hidden="true"></i>
-                    </div> 
-                    <div class="deals-right">
-                        <h4>corporate orders</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div> 
-                <div class="clearfix"> </div>
+                <div class="bottom-area d-flex px-3">
+                  <div class="m-auto d-flex">
+                    <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                      <span><i class="ion-ios-menu"></i></span>
+                    </a>
+                    <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+                      <span><i class="ion-ios-cart"></i></span>
+                    </a>
+                    <a href="#" class="heart d-flex justify-content-center align-items-center ">
+                      <span><i class="ion-ios-heart"></i></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
-    </div>
-    <!-- //deals --> 
-    <!-- dishes -->
-    <div class="w3agile-spldishes">
-        <div class="container">
-            <h3 class="w3ls-title">Special Foods</h3>
-            <div class="spldishes-agileinfo">
-                <div class="col-md-3 spldishes-w3left">
-                    <h5 class="w3ltitle">Staple Specials</h5>
-                    <p>Vero vulputate enim non justo posuere placerat Phasellus mauris vulputate enim non justo enim .</p>
-                </div> 
-                <div class="col-md-9 spldishes-grids">
-                    <!-- Owl-Carousel -->
-                    <div id="owl-demo" class="owl-carousel text-center agileinfo-gallery-row">
-                        <a href="{{ route('products') }}" class="item g1">
-                            <img class="lazyOwl" src="{!! asset('images/g1.jpg') !!}" title="Our latest gallery" alt=""/>
-                            <div class="agile-dish-caption">
-                                <h4>Duis congue</h4>
-                                <span>Neque porro quisquam est qui dolorem </span>
-                            </div>
-                        </a>
-                        <a href="{{ route('products') }}" class="item g1">
-                            <img class="lazyOwl" src="{!! asset('images/g2.jpg') !!}" title="Our latest gallery" alt=""/>
-                            <div class="agile-dish-caption">
-                                <h4>Duis congue</h4>
-                                <span>Neque porro quisquam est qui dolorem </span>
-                            </div>
-                        </a>
-                        <a href="{{ route('products') }}" class="item g1">
-                            <img class="lazyOwl" src="{!! asset('images/g3.jpg') !!}" title="Our latest gallery" alt=""/>
-                            <div class="agile-dish-caption">
-                                <h4>Duis congue</h4>
-                                <span>Neque porro quisquam est qui dolorem </span>
-                            </div>
-                        </a>
-                        <a href="{{ route('products') }}" class="item g1">
-                            <img class="lazyOwl" src="{!! asset('images/g4.jpg') !!}" title="Our latest gallery" alt=""/>
-                            <div class="agile-dish-caption">
-                                <h4>Duis congue</h4>
-                                <span>Neque porro quisquam est qui dolorem </span>
-                            </div>
-                        </a>
-                        <a href="{{ route('products') }}" class="item g1">
-                            <img class="lazyOwl" src="{!! asset('images/g5.jpg') !!}" alt=""/>
-                            <div class="agile-dish-caption">
-                                <h4>Duis congue</h4>
-                                <span>Neque porro quisquam est qui dolorem </span>
-                            </div>
-                        </a> 
-                        <a href="{{ route('products') }}" class="item g1">
-                            <img class="lazyOwl" src="{!! asset('images/g1.jpg') !!}" title="Our latest gallery" alt=""/>
-                            <div class="agile-dish-caption">
-                                <h4>Duis congue</h4>
-                                <span>Neque porro quisquam est qui dolorem </span>
-                            </div>
-                        </a>
-                        <a href="{{ route('products') }}" class="item g1">
-                            <img class="lazyOwl" src="{!! asset('images/g2.jpg') !!}" title="Our latest gallery" alt=""/>
-                            <div class="agile-dish-caption">
-                                <h4>Duis congue</h4>
-                                <span>Neque porro quisquam est qui dolorem </span>
-                            </div>
-                        </a>
-                        <a href="{{ route('products') }}" class="item g1">
-                            <img class="lazyOwl" src="{!! asset('images/g3.jpg') !!}" title="Our latest gallery" alt=""/>
-                            <div class="agile-dish-caption">
-                                <h4>Duis congue</h4>
-                                <span>Neque porro quisquam est qui dolorem </span>
-                            </div>
-                        </a>
-                    </div> 
-                </div>  
-                <div class="clearfix"> </div>
+          </div>
+          <div class="col-md-6 col-lg-3 ftco-animate">
+            <div class="product">
+              <a href="#" class="img-prod"><img class="img-fluid" src="{{ asset('assets/images/product-3.jpg') }}" alt="Colorlib Template">
+                <div class="overlay"></div>
+              </a>
+              <div class="text py-3 pb-4 px-3 text-center">
+                <h3><a href="#">Green Beans</a></h3>
+                <div class="d-flex">
+                  <div class="pricing">
+                    <p class="price"><span>$120.00</span></p>
+                  </div>
+                </div>
+                <div class="bottom-area d-flex px-3">
+                  <div class="m-auto d-flex">
+                    <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                      <span><i class="ion-ios-menu"></i></span>
+                    </a>
+                    <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+                      <span><i class="ion-ios-cart"></i></span>
+                    </a>
+                    <a href="#" class="heart d-flex justify-content-center align-items-center ">
+                      <span><i class="ion-ios-heart"></i></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="col-md-6 col-lg-3 ftco-animate">
+            <div class="product">
+              <a href="#" class="img-prod"><img class="img-fluid" src="{{ asset('assets/images/product-4.jpg') }}" alt="Colorlib Template">
+                <div class="overlay"></div>
+              </a>
+              <div class="text py-3 pb-4 px-3 text-center">
+                <h3><a href="#">Purple Cabbage</a></h3>
+                <div class="d-flex">
+                  <div class="pricing">
+                    <p class="price"><span>$120.00</span></p>
+                  </div>
+                </div>
+                <div class="bottom-area d-flex px-3">
+                  <div class="m-auto d-flex">
+                    <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                      <span><i class="ion-ios-menu"></i></span>
+                    </a>
+                    <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+                      <span><i class="ion-ios-cart"></i></span>
+                    </a>
+                    <a href="#" class="heart d-flex justify-content-center align-items-center ">
+                      <span><i class="ion-ios-heart"></i></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-6 col-lg-3 ftco-animate">
+            <div class="product">
+              <a href="#" class="img-prod"><img class="img-fluid" src="{{ asset('assets/images/product-5.jpg') }}" alt="Colorlib Template">
+                <span class="status">30%</span>
+                <div class="overlay"></div>
+              </a>
+              <div class="text py-3 pb-4 px-3 text-center">
+                <h3><a href="#">Tomatoe</a></h3>
+                <div class="d-flex">
+                  <div class="pricing">
+                    <p class="price"><span class="mr-2 price-dc">$120.00</span><span class="price-sale">$80.00</span></p>
+                  </div>
+                </div>
+                <div class="bottom-area d-flex px-3">
+                  <div class="m-auto d-flex">
+                    <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                      <span><i class="ion-ios-menu"></i></span>
+                    </a>
+                    <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+                      <span><i class="ion-ios-cart"></i></span>
+                    </a>
+                    <a href="#" class="heart d-flex justify-content-center align-items-center ">
+                      <span><i class="ion-ios-heart"></i></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 ftco-animate">
+            <div class="product">
+              <a href="#" class="img-prod"><img class="img-fluid" src="{{ asset('assets/images/product-6.jpg') }}" alt="Colorlib Template">
+                <div class="overlay"></div>
+              </a>
+              <div class="text py-3 pb-4 px-3 text-center">
+                <h3><a href="#">Brocolli</a></h3>
+                <div class="d-flex">
+                  <div class="pricing">
+                    <p class="price"><span>$120.00</span></p>
+                  </div>
+                </div>
+                <div class="bottom-area d-flex px-3">
+                  <div class="m-auto d-flex">
+                    <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                      <span><i class="ion-ios-menu"></i></span>
+                    </a>
+                    <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+                      <span><i class="ion-ios-cart"></i></span>
+                    </a>
+                    <a href="#" class="heart d-flex justify-content-center align-items-center ">
+                      <span><i class="ion-ios-heart"></i></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 ftco-animate">
+            <div class="product">
+              <a href="#" class="img-prod"><img class="img-fluid" src="{{ asset('assets/images/product-7.jpg') }}" alt="Colorlib Template">
+                <div class="overlay"></div>
+              </a>
+              <div class="text py-3 pb-4 px-3 text-center">
+                <h3><a href="#">Carrots</a></h3>
+                <div class="d-flex">
+                  <div class="pricing">
+                    <p class="price"><span>$120.00</span></p>
+                  </div>
+                </div>
+                <div class="bottom-area d-flex px-3">
+                  <div class="m-auto d-flex">
+                    <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                      <span><i class="ion-ios-menu"></i></span>
+                    </a>
+                    <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+                      <span><i class="ion-ios-cart"></i></span>
+                    </a>
+                    <a href="#" class="heart d-flex justify-content-center align-items-center ">
+                      <span><i class="ion-ios-heart"></i></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 ftco-animate">
+            <div class="product">
+              <a href="#" class="img-prod"><img class="img-fluid" src="{{ asset('assets/images/product-8.jpg') }}" alt="Colorlib Template">
+                <div class="overlay"></div>
+              </a>
+              <div class="text py-3 pb-4 px-3 text-center">
+                <h3><a href="#">Fruit Juice</a></h3>
+                <div class="d-flex">
+                  <div class="pricing">
+                    <p class="price"><span>$120.00</span></p>
+                  </div>
+                </div>
+                <div class="bottom-area d-flex px-3">
+                  <div class="m-auto d-flex">
+                    <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                      <span><i class="ion-ios-menu"></i></span>
+                    </a>
+                    <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+                      <span><i class="ion-ios-cart"></i></span>
+                    </a>
+                    <a href="#" class="heart d-flex justify-content-center align-items-center ">
+                      <span><i class="ion-ios-heart"></i></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-    <!-- //dishes -->  
-    <!-- cart-js -->
-    <script src="js/minicart.js"></script>
-    <script>
-        w3ls.render();
+      </div>
+    </section>
+    
+    <section class="ftco-section img" style="background-image: url({{ asset('assets/images/bg_3.jpg') }} );">
+      <div class="container">
+        <div class="row justify-content-end">
+          <div class="col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate">
+            <span class="subheading">Best Price For You</span>
+            <h2 class="mb-4">Deal of the day</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+            <h3><a href="#">Spinach</a></h3>
+            <span class="price">$10 <a href="#">now $5 only</a></span>
+            <div id="timer" class="d-flex mt-5">
+              <div class="time" id="days"></div>
+              <div class="time pl-3" id="hours"></div>
+              <div class="time pl-3" id="minutes"></div>
+              <div class="time pl-3" id="seconds"></div>
+            </div>
+          </div>
+        </div>      
+      </div>
+    </section>
 
-        w3ls.cart.on('w3sb_checkout', function (evt) {
-            var items, len, i;
+    <section class="ftco-section testimony-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section ftco-animate text-center">
+            <span class="subheading">Testimony</span>
+            <h2 class="mb-4">Our satisfied customer says</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
+          </div>
+        </div>
+        <div class="row ftco-animate">
+          <div class="col-md-12">
+            <div class="carousel-testimony owl-carousel">
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({{ asset('assets/images/person_1.jpg') }} )">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="name">Garreth Smith</p>
+                    <span class="position">Marketing Manager</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({{ asset('assets/images/person_2.jpg') }} )">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="name">Garreth Smith</p>
+                    <span class="position">Interface Designer</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({{ asset('assets/images/person_3.jpg') }} )">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="name">Garreth Smith</p>
+                    <span class="position">UI Designer</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({{ asset('assets/images/person_1.jpg') }} )">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="name">Garreth Smith</p>
+                    <span class="position">Web Developer</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({{ asset('assets/images/person_1.jpg') }} )">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="name">Garreth Smith</p>
+                    <span class="position">System Analyst</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            if (this.subtotal() > 0) {
-                items = this.items();
+    <hr>
 
-                for (i = 0, len = items.length; i < len; i++) { 
-                }
-            }
-        });
-    </script>  
-    <!-- //cart-js -->  
-    <!-- Owl-Carousel-JavaScript -->
-    <script src="js/owl.carousel.js"></script>
-    <script>
-        $(document).ready(function() {
-            $("#owl-demo").owlCarousel ({
-                items : 3,
-                lazyLoad : true,
-                autoPlay : true,
-                pagination : true,
-            });
-        });
-    </script>
-    <!-- //Owl-Carousel-JavaScript -->  
-    <!-- start-smooth-scrolling -->
-    <script src="js/SmoothScroll.min.js"></script>  
-    <script type="text/javascript" src="js/move-top.js"></script>
-    <script type="text/javascript" src="js/easing.js"></script> 
-    <script type="text/javascript">
-            jQuery(document).ready(function($) {
-                $(".scroll").click(function(event){     
-                    event.preventDefault();
-            
-            $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-                });
-            });
-    </script>
-    <!-- //end-smooth-scrolling -->   
-    <!-- smooth-scrolling-of-move-up -->
-    <script type="text/javascript">
-        $(document).ready(function() {
-            /*
-            var defaults = {
-                containerID: 'toTop', // fading element id
-                containerHoverID: 'toTopHover', // fading element hover id
-                scrollSpeed: 1200,
-                easingType: 'linear' 
-            };
-            */
-            
-            $().UItoTop({ easingType: 'easeOutQuart' });
-            
-        });
-    </script>
-    <!-- //smooth-scrolling-of-move-up --> 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/bootstrap.js"></script>
+    <section class="ftco-section ftco-partner">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm ftco-animate">
+            <a href="#" class="partner"><img src="{{ asset('assets/images/partner-1.png') }}" class="img-fluid" alt="Colorlib Template"></a>
+          </div>
+          <div class="col-sm ftco-animate">
+            <a href="#" class="partner"><img src="{{ asset('assets/images/partner-2.png') }}" class="img-fluid" alt="Colorlib Template"></a>
+          </div>
+          <div class="col-sm ftco-animate">
+            <a href="#" class="partner"><img src="{{ asset('assets/images/partner-3.png') }}" class="img-fluid" alt="Colorlib Template"></a>
+          </div>
+          <div class="col-sm ftco-animate">
+            <a href="#" class="partner"><img src="{{ asset('assets/images/partner-4.png') }}" class="img-fluid" alt="Colorlib Template"></a>
+          </div>
+          <div class="col-sm ftco-animate">
+            <a href="#" class="partner"><img src="{{ asset('assets/images/partner-5.png') }}" class="img-fluid" alt="Colorlib Template"></a>
+          </div>
+        </div>
+      </div>
+    </section>
 
 @endsection

@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
         $user_super = new User();
         $user_super->name = 'Diana Joanita';
         $user_super->email = 'dianajoanita@gmail.com';
-        $user_super->password = Hash::make('dollar');
+        $user_super->password = Hash::make('dollar256');
         $user_super->gender = 'Female';
         $user_super->telephone = '0771991162';
         $user_super->location = 'Kampala';
@@ -33,9 +33,9 @@ class UsersTableSeeder extends Seeder
         $user_super->attachRole(Role::where('name','super-admin')->first());
 
         $user_admin = new User();
-        $user_admin->name = 'Userone';
+        $user_admin->name = 'User one';
         $user_admin->email = 'admin@admin.com';
-        $user_admin->password = Hash::make('dollar');
+        $user_admin->password = Hash::make('dollar256');
         $user_admin->gender = 'Male';
         $user_admin->telephone = '';
         $user_admin->location = 'Kampala';
@@ -50,7 +50,7 @@ class UsersTableSeeder extends Seeder
         $user_guest = new User();
         $user_guest->name = 'Guest User';
         $user_guest->email = 'guest@gmail.com';
-        $user_guest->password = Hash::make('dollar');
+        $user_guest->password = Hash::make('dollar256');
         $user_guest->gender = '';
         $user_guest->telephone = '';
         $user_guest->location = '';

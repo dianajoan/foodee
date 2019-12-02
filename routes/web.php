@@ -14,7 +14,7 @@
 Auth::routes();
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -29,20 +29,46 @@ Route::group(['middleware' => 'web'], function(){
 
 });
 
-Route::group(['prefix' => 'admin', 'middleware' => ['auth','verified']], function(){
+Route::group(['prefix' => 'admin', 'middleware' => ['auth','role:super-admin|admin']], function(){
+	Route::resource('/roles', 'RolesController');
 
+	/*
+	 * closure pages
+	 */
+	Route::get('/', [
+		'as' 	=> 'admin',
+		'uses'	=> 'AdminPageController@index',
+	]);
 });
 
-Route::group(['prefix' => 'home', 'middleware' => ['auth','verified']], function(){
-	// view the food menu
-	Route::get('menu', [
-		'as'  => 'menu',
-		'uses' => 'PagesController@menu',
+Route::group(['prefix'	=> 'admin', 'middleware'	=> ['auth']], function()
+	{
+		Route::resource('/users', 'UsersController');
+	}
+);
+
+Route::group(['prefix' => 'home', 'middleware' => ['auth']], function()
+{
+	Route::get('/user/profile/settings', [
+		'as' 	=> 'settings',
+		'uses'	=> 'UserPageController@settings',
 	]);
-	// view the food products
-	Route::get('products', [
-		'as'  => 'products',
-		'uses' => 'PagesController@products',
+	Route::get('/profile', [
+		'as' 	=> 'profile',
+		'uses'	=> 'UserPageController@profile',
+	]);
+	Route::post('/user/profile', [
+		'as'	=> 'profile.update',
+		'uses'	=> 'UserPageController@update_image'
+	]);
+	Route::post('/user/password/profile', [
+		'as'	=> 'password.update',
+		'uses'	=> 'UserController@changePassword'
+	]);
+	
+	Route::get('/user', [
+		'as' 	=> 'userhome',
+		'uses'	=> 'HomeController@userIndex'
 	]);
 });
 
@@ -51,6 +77,41 @@ Route::group(['prefix' => 'web', 'middleware' => 'web'], function(){
 	Route::get('about', [
 		'as' 	=> 'about',
 		'uses' 	=> 'PagesController@about',
+	]);
+	// blog page
+	Route::get('blog', [
+		'as' 	=> 'blog',
+		'uses' 	=> 'PagesController@blog',
+	]);
+	// blog page
+	Route::get('blogsingle', [
+		'as' 	=> 'blog-single',
+		'uses' 	=> 'PagesController@blogsingle',
+	]);
+	// cart page
+	Route::get('cart', [
+		'as' 	=> 'cart',
+		'uses' 	=> 'PagesController@cart',
+	]);
+	// checkout page
+	Route::get('checkout', [
+		'as' 	=> 'checkout',
+		'uses' 	=> 'PagesController@checkout',
+	]);
+	// product-single page
+	Route::get('productsingle', [
+		'as' 	=> 'product-single',
+		'uses' 	=> 'PagesController@productsingle',
+	]);
+	// shop page
+	Route::get('shop', [
+		'as' 	=> 'shop',
+		'uses' 	=> 'PagesController@shop',
+	]);
+	// wishlist page
+	Route::get('wishlist', [
+		'as' 	=> 'wishlist',
+		'uses' 	=> 'PagesController@wishlist',
 	]);
 	// contact page
 	Route::get('contact', [
@@ -61,11 +122,6 @@ Route::group(['prefix' => 'web', 'middleware' => 'web'], function(){
 	Route::get('careers', [
 		'as'  => 'careers',
 		'uses' => 'PagesController@careers',
-	]);
-	// offer page
-	Route::get('offers', [
-		'as'  => 'offers',
-		'uses' => 'PagesController@offers',
 	]);
 	// faq page
 	Route::get('faq', [
@@ -88,3 +144,5 @@ Route::group(['prefix' => 'web', 'middleware' => 'web'], function(){
 		'uses' => 'PagesController@terms',
 	]);
 });
+
+
