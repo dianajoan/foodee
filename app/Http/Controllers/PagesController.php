@@ -26,11 +26,6 @@ class PagesController extends Controller
 		return view('web.blog-single');
 	}
 
-	public function wishlist()
-	{
-		return view('web.wishlist');
-	}
-
 	public function contact()
 	{
 		return view('web.contact');

@@ -33,7 +33,6 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-                <a class="dropdown-item" href="{{ route('wishlist') }}">Wishlist</a>
                 <a class="dropdown-item" href="{{ route('checkout.index') }}">Checkout</a>
                 <a class="dropdown-item" href="{{ route('account.orders') }}">Order</a>
               </div>
@@ -48,7 +47,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="{{ $category->slug }}">
                           @foreach($category->items as $item)
-                            <a class="dropdown-item" href="{{ route('categories.show', $item->slug) }}">Vegetables
+                            <a class="dropdown-item" href="{{ route('categories.show', $item->slug) }}">
                             </a>
                           @endforeach
                         </div>
@@ -72,13 +71,13 @@
 
                 @if(Auth::check())
 
-                <a class="dropdown-item" href="{{route('user.profile')}}">Profile</a>
-                <a class="dropdown-item" href="{{route('user.logout')}}">Logout</a>
+                <a class="dropdown-item" href="#">Profile</a>
+                <a class="dropdown-item" href="{{route('logout')}}">Logout</a>
 
                 @else
 
-                <a class="dropdown-item" href="{{route('user.signin')}}">Login</a>
-                <a class="dropdown-item" href="{{route('user.signup')}}">Register</a>
+                <a class="dropdown-item" href="{{route('login')}}">Login</a>
+                <a class="dropdown-item" href="{{route('register')}}">Register</a>
 
                 @endif
 

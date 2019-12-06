@@ -12,50 +12,6 @@ require 'admin.php';
 
 Route::view('/', 'site.pages.home');
 
-Route::group(['prefix' => 'user'], function() {
-
-    Route::group(['middleware' => 'guest'], function() {
-    	//register page
-        Route::get('/signup', [
-            'uses' => 'UserController@getSignup',
-            'as'   => 'user.signup',
-        ]);
-
-        Route::post('/signup', [
-            'uses' => 'UserController@postSignup',
-            'as'   => 'user.signup',
-        ]);
-        //login page
-        Route::get('/signin', [
-            'uses' => 'UserController@getSignin',
-            'as'   => 'user.signin',
-        ]);
-
-        Route::post('/signin', [
-            'uses' => 'UserController@postSignin',
-            'as'   => 'user.signin',
-        ]);
-	});
-});
-
-
-Route::group(['middleware' => 'auth'], function() {
-	//profile page
-    Route::get('/profile', [
-        'uses' => 'UserController@getProfile',
-        'as'   => 'user.profile',
-    ]);
-    //logout page
-    Route::get('/logout', [
-        'uses' => 'UserController@getLogout',
-        'as'   => 'user.logout',
-    ]);
-
-});
-
-
-
-
 Route::get('/category/{slug}', 'Site\CategoryController@show')->name('categories.show');
 Route::get('/product/{slug}', 'Site\ProductController@show')->name('product.show');
 Route::post('/product/add/cart', 'Site\ProductController@addToCart')->name('product.add.cart');
@@ -64,7 +20,7 @@ Route::get('/cart/item/{id}/remove', 'Site\CartController@removeItem')->name('ch
 Route::get('/cart/clear', 'Site\CartController@clearCart')->name('checkout.cart.clear');
 
 Route::group(['middleware' => ['auth']], function () {
-	
+
     Route::get('/checkout', 'Site\CheckoutController@getCheckout')->name('checkout.index');
     Route::post('/checkout/order', 'Site\CheckoutController@placeOrder')->name('checkout.place.order');
     Route::get('checkout/payment/complete', 'Site\CheckoutController@complete')->name('checkout.payment.complete');
@@ -88,11 +44,6 @@ Route::group(['prefix' => 'web', 'middleware' => 'web'], function(){
 	Route::get('blogsingle', [
 		'as' 	=> 'blog-single',
 		'uses' 	=> 'PagesController@blogsingle',
-	]);
-	// wishlist page
-	Route::get('wishlist', [
-		'as' 	=> 'wishlist',
-		'uses' 	=> 'PagesController@wishlist',
 	]);
 	// contact page
 	Route::get('contact', [

@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('site.app')
 @section('title') Terms & Conditions @endsection
 
 @section('content')

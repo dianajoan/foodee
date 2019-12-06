@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('site.app')
 @section('title') Blog Details @endsection
 
 @section('content')

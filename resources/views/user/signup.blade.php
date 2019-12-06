@@ -13,61 +13,61 @@
                 </span>
 
                 <div class="wrap-input100 validate-input m-b-20" data-validate="Enter Your First Name">
-                    <input class="input100 {{ $errors->has('first_name') ? ' is-invalid' : '' }}" type="text" name="fist_name" value="{{ old('first_name') }}" required autofocus placeholder="First Name">
+                    <input class="input100 @error('first_name') is-invalid @enderror" type="text" name="fist_name" value="{{ old('first_name') }}" required autofocus placeholder="First Name">
 
-                    @if ($errors->has('first_name'))
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('first_name') }}</strong>
-                            </span>
-                        @endif
+                    @error('first_name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
 
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input m-b-20" data-validate="Enter Your Last Name">
-                    <input class="input100 {{ $errors->has('last_name') ? ' is-invalid' : '' }}" type="text" name="last_name" value="{{ old('last_name') }}" required autofocus placeholder="Last Name">
+                    <input class="input100 @error('last_name') is-invalid @enderror" type="text" name="last_name" value="{{ old('last_name') }}" required autofocus placeholder="Last Name">
 
-                    @if ($errors->has('last_name'))
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('last_name') }}</strong>
-                            </span>
-                        @endif
+                    @error('last_name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
 
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input m-b-20" data-validate="Enter Your Email">
-                    <input class="input100 {{ $errors->has('email') ? ' is-invalid' : '' }}" type="email" name="email" value="{{ old('email') }}" placeholder="Enter Your Email" required>
+                    <input class="input100 @error('email') is-invalid @enderror" type="email" name="email" value="{{ old('email') }}" placeholder="Enter Your Email" required>
 
-                    @if ($errors->has('email'))
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('email') }}</strong>
-                            </span>
-                        @endif
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
 
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input m-b-25" data-validate = "Enter Password">
-                    <input class="input100 {{ $errors->has('password') ? ' is-invalid' : '' }}" type="password" name="password" placeholder="Enter Password" required>
+                    <input class="input100 @error('password') is-invalid @enderror" type="password" name="password" placeholder="Enter Password" required>
 
-                    @if ($errors->has('password'))
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('password') }}</strong>
-                            </span>
-                        @endif
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
 
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input m-b-25" data-validate = "Confirm Password">
-                    <input class="input100 {{ $errors->has('password') ? ' is-invalid' : '' }}" type="password" name="password_confirmation" placeholder="Enter Password" required>
+                    <input class="input100 @error('password_confirmation') is-invalid @enderror" type="password" name="password_confirmation" placeholder="Enter Password" required>
 
-                    @if ($errors->has('password'))
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('password') }}</strong>
-                            </span>
-                        @endif
+                    @error('password_confirmation')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
 
                     <span class="focus-input100"></span>
                 </div>
@@ -95,7 +95,7 @@
                 </div>
 
                 <div class="container-login100-form-btn">
-                    <button class="login100-form-btn">
+                    <button type="submit" class="login100-form-btn">
                         {{ __('Register') }}
                     </button>
                 </div>

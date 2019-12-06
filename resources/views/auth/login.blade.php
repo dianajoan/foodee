@@ -14,25 +14,25 @@
                 </span>
 
                 <div class="wrap-input100 validate-input m-b-20" data-validate="Enter Your Email">
-                    <input class="input100 {{ $errors->has('email') ? ' is-invalid' : '' }}" type="email" name="email" placeholder="Enter Your Email Address" required autofocus>
+                    <input class="input100 @error('email') is-invalid @enderror" type="email" name="email" placeholder="Enter Your Email Address" required autofocus>
 
-                    @if ($errors->has('email'))
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('email') }}</strong>
-                            </span>
-                        @endif
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
 
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input m-b-25" data-validate = "Enter Password">
-                    <input class="input100 {{ $errors->has('password') ? ' is-invalid' : '' }}" type="password" name="password" placeholder="Enter Password" required>
+                    <input class="input100 @error('password') is-invalid @enderror" type="password" name="password" placeholder="Enter Password" required>
 
-                    @if ($errors->has('password'))
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('password') }}</strong>
-                            </span>
-                        @endif
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
 
                     <span class="focus-input100"></span>
                 </div>
@@ -49,7 +49,7 @@
                 </div>
 
                 <div class="container-login100-form-btn">
-                    <button class="login100-form-btn">
+                    <button type="submit" class="login100-form-btn" >
                         {{ __('Login') }}
                     </button>
                 </div>
