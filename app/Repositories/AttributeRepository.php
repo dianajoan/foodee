@@ -1,10 +1,13 @@
 <?php
+
 namespace App\Repositories;
+
 use App\Models\Attribute;
 use App\Contracts\AttributeContract;
 use Illuminate\Database\QueryException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Doctrine\Instantiator\Exception\InvalidArgumentException;
+
 class AttributeRepository extends BaseRepository implements AttributeContract
 {
     /**
@@ -16,6 +19,7 @@ class AttributeRepository extends BaseRepository implements AttributeContract
         parent::__construct($model);
         $this->model = $model;
     }
+
     /**
      * @param string $order
      * @param string $sort
@@ -26,6 +30,7 @@ class AttributeRepository extends BaseRepository implements AttributeContract
     {
         return $this->all($columns, $order, $sort);
     }
+
     /**
      * @param int $id
      * @return mixed
@@ -35,10 +40,14 @@ class AttributeRepository extends BaseRepository implements AttributeContract
     {
         try {
             return $this->findOneOrFail($id);
+
         } catch (ModelNotFoundException $e) {
+
             throw new ModelNotFoundException($e);
         }
+
     }
+
     /**
      * @param array $params
      * @return Category|mixed
@@ -47,16 +56,23 @@ class AttributeRepository extends BaseRepository implements AttributeContract
     {
         try {
             $collection = collect($params);
+
             $is_filterable = $collection->has('is_filterable') ? 1 : 0;
             $is_required = $collection->has('is_required') ? 1 : 0;
+
             $merge = $collection->merge(compact('is_filterable', 'is_required'));
+
             $attribute = new Attribute($merge->all());
+
             $attribute->save();
+
             return $attribute;
+
         } catch (QueryException $exception) {
             throw new InvalidArgumentException($exception->getMessage());
         }
     }
+
     /**
      * @param array $params
      * @return mixed
@@ -64,13 +80,19 @@ class AttributeRepository extends BaseRepository implements AttributeContract
     public function updateAttribute(array $params)
     {
         $attribute = $this->findAttributeById($params['id']);
+
         $collection = collect($params)->except('_token');
+
         $is_filterable = $collection->has('is_filterable') ? 1 : 0;
         $is_required = $collection->has('is_required') ? 1 : 0;
+
         $merge = $collection->merge(compact('is_filterable', 'is_required'));
+
         $attribute->update($merge->all());
+
         return $attribute;
     }
+
     /**
      * @param $id
      * @return bool|mixed
@@ -78,7 +100,9 @@ class AttributeRepository extends BaseRepository implements AttributeContract
     public function deleteAttribute($id)
     {
         $attribute = $this->findAttributeById($id);
+
         $attribute->delete();
+
         return $attribute;
     }
 }
