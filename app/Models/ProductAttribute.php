@@ -3,8 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Product;
-use App\Models\AttributeValue;
+use App\Modles\Product;
+use App\Models\Attribute;
 
 class ProductAttribute extends Model
 {
@@ -16,7 +16,7 @@ class ProductAttribute extends Model
     /**
      * @var array
      */
-    protected $fillable = ['product_id', 'quantity', 'price'];
+    protected $fillable = ['attribute_id', 'product_id', 'value', 'quantity', 'price'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -27,10 +27,10 @@ class ProductAttribute extends Model
     }
 
     /**
-	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-	 */
-	public function attributesValues()
-	{
-	    return $this->belongsToMany(AttributeValue::class);
-	}
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function attribute()
+    {
+        return $this->belongsTo(Attribute::class);
+    }
 }
