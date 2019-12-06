@@ -28,51 +28,48 @@
 						        <th>Product name</th>
 						        <th>Price</th>
 						        <th>Quantity</th>
+						        <th>Subtotal</th>
 						        <th>Total</th>
+						        <th>Actions</th>
 						      </tr>
 						    </thead>
 						    <tbody>
-						      <tr class="text-center">
-						        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
-						        
-						        <td class="image-prod"><div class="img" style="background-image:url({{ asset('assets/images/product-3.jpg') }} );"></div></td>
-						        
-						        <td class="product-name">
-						        	<h3>Bell Pepper</h3>
-						        	<p>Far far away, behind the word mountains, far from the countries</p>
-						        </td>
-						        
-						        <td class="price">$4.90</td>
-						        
-						        <td class="quantity">
-						        	<div class="input-group mb-3">
-					             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-					          	</div>
-					          </td>
-						        
-						        <td class="total">$4.90</td>
-						      </tr><!-- END TR-->
+
+						    	<?php $total = 0 ?>
+ 
+						        @if(session('cart'))
+						            @foreach(session('cart') as $id => $details)
+						 
+						                <?php $total += $details['price'] * $details['quantity'] ?>
 
 						      <tr class="text-center">
 						        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
 						        
-						        <td class="image-prod"><div class="img" style="background-image:url({{ asset('assets/images/product-4.jpg') }} );"></div></td>
+						        <td class="image-prod"><div class="img" src="{{ $details['photo'] }}" width="100" height="100"></div></td>
 						        
 						        <td class="product-name">
-						        	<h3>Bell Pepper</h3>
+						        	<h3>{{ $details['name'] }}</h3>
 						        	<p>Far far away, behind the word mountains, far from the countries</p>
 						        </td>
 						        
-						        <td class="price">$15.70</td>
+						        <td class="price">${{ $details['price'] }}</td>
 						        
 						        <td class="quantity">
 						        	<div class="input-group mb-3">
-					             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
+					             	<input type="number" name="quantity" class="quantity form-control input-number" value="{{ $details['quantity'] }}" min="1" max="100">
 					          	</div>
 					          </td>
 						        
-						        <td class="total">$15.70</td>
+						        <td class="subtotal">${{ $details['price'] * $details['quantity'] }}</td>
+						        <td class="total"><strong>Total ${{ $total }}</strong></td>
+
+						        <td class="actions">
+			                        <button class="btn btn-info btn-sm update-cart" data-id="{{ $id }}"><i class="fa fa-refresh"></i></button>
+			                        <button class="btn btn-danger btn-sm remove-from-cart" data-id="{{ $id }}"><i class="fa fa-trash-o"></i></button>
+						        </td>
 						      </tr><!-- END TR-->
+						      @endforeach
+        					@endif
 						    </tbody>
 						  </table>
 					  </div>
@@ -139,5 +136,46 @@
     		</div>
 			</div>
 		</section>
+
+		@section('scripts')
+ 
+ 
+    <script type="text/javascript">
+ 
+        $(".update-cart").click(function (e) {
+           e.preventDefault();
+ 
+           var ele = $(this);
+ 
+            $.ajax({
+               url: '{{ url('update-cart') }}',
+               method: "patch",
+               data: {_token: '{{ csrf_token() }}', id: ele.attr("data-id"), quantity: ele.parents("tr").find(".quantity").val()},
+               success: function (response) {
+                   window.location.reload();
+               }
+            });
+        });
+ 
+        $(".remove-from-cart").click(function (e) {
+            e.preventDefault();
+ 
+            var ele = $(this);
+ 
+            if(confirm("Are you sure")) {
+                $.ajax({
+                    url: '{{ url('remove-from-cart') }}',
+                    method: "DELETE",
+                    data: {_token: '{{ csrf_token() }}', id: ele.attr("data-id")},
+                    success: function (response) {
+                        window.location.reload();
+                    }
+                });
+            }
+        });
+ 
+    </script>
+ 
+@endsection
 
 @endsection

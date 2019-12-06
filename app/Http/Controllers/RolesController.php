@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Permission;
 use App\Models\Role;
 
-class RolesController extends Controller
+class RoleController extends Controller
 {
     /**
      * Display the constructor of the resource.
@@ -17,6 +17,7 @@ class RolesController extends Controller
     public function __construct()
     {
         $this->middleware('role:super-admin|admin');
+        
         $this->middleware('permission:create_role',['only'=>'create']);
         $this->middleware('permission:delete_role',['only'=>'destroy']);
         $this->middleware('permission:edit_role',['only'=>['update','edit']]);

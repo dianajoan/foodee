@@ -2,18 +2,15 @@
 
 namespace App;
 
+use App\Models\Order;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Zizaco\Entrust\Traits\EntrustUserTrait;
-// use Laravel\Passport\HasApiTokens;
-use App\Models\Role;
 
 class User extends Authenticatable 
 {
     use Notifiable;
     // use HasApiTokens;
-    use EntrustUserTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -21,9 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'username', 'telephone',
-        'gender', 'profile_image', 'date_of_birth', 'level',
-        'nationality', 'location', 'role', 'occupation', 'status',
+        'first_name', 'last_name', 'email', 'password', 'address', 'city', 'country'
     ];
 
     /**
@@ -35,6 +30,17 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    
+    /**
+     * @return string
+     */
+    public function getFullNameAttribute()
+    {
+        return $this->first_name. ' '. $this->last_name;
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
 
 }

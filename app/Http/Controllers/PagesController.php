@@ -26,26 +26,6 @@ class PagesController extends Controller
 		return view('web.blog-single');
 	}
 
-	public function cart()
-	{
-		return view('web.cart');
-	}
-
-	public function checkout()
-	{
-		return view('web.checkout');
-	}
-
-	public function productsingle()
-	{
-		return view('web.product-single');
-	}
-
-	public function shop()
-	{
-		return view('web.shop');
-	}
-
 	public function wishlist()
 	{
 		return view('web.wishlist');
@@ -54,11 +34,6 @@ class PagesController extends Controller
 	public function contact()
 	{
 		return view('web.contact');
-	}
-
-	public function careers()
-	{
-		return view('web.careers');
 	}
 
 	public function faq()

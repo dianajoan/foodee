@@ -174,6 +174,9 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\SettingsServiceProvider::class,
+        App\Providers\ViewComposerServiceProvider::class,
+        App\Providers\RepositoryServiceProvider::class,
         // Permissions and Roles
         Zizaco\Entrust\EntrustServiceProvider::class,
 
@@ -229,6 +232,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         // roles and perms
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+        'Cart' => Darryldecode\Cart\Facades\CartFacade::class
 
     ],
 

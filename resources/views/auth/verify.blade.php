@@ -1,4 +1,4 @@
-@extends('layouts.auth')
+@extends('site.auth')
 @section('title') Verify Your Email @endsection
 
 @section('content')

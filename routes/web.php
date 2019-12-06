@@ -5,72 +5,72 @@
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
 */
 
 Auth::routes();
+require 'admin.php';
 
-Route::get('/', function () {
-    return view('home');
+Route::view('/', 'site.pages.home');
+
+Route::group(['prefix' => 'user'], function() {
+
+    Route::group(['middleware' => 'guest'], function() {
+    	//register page
+        Route::get('/signup', [
+            'uses' => 'UserController@getSignup',
+            'as'   => 'user.signup',
+        ]);
+
+        Route::post('/signup', [
+            'uses' => 'UserController@postSignup',
+            'as'   => 'user.signup',
+        ]);
+        //login page
+        Route::get('/signin', [
+            'uses' => 'UserController@getSignin',
+            'as'   => 'user.signin',
+        ]);
+
+        Route::post('/signin', [
+            'uses' => 'UserController@postSignin',
+            'as'   => 'user.signin',
+        ]);
+	});
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleware' => 'web'], function(){
-	Route::get('test',[
-		'as' 	=> 'test',
-		'uses'	=> function(){
-			return view('ohome');
-		},
-	]);
+Route::group(['middleware' => 'auth'], function() {
+	//profile page
+    Route::get('/profile', [
+        'uses' => 'UserController@getProfile',
+        'as'   => 'user.profile',
+    ]);
+    //logout page
+    Route::get('/logout', [
+        'uses' => 'UserController@getLogout',
+        'as'   => 'user.logout',
+    ]);
 
 });
 
-Route::group(['prefix' => 'admin', 'middleware' => ['auth','role:super-admin|admin']], function(){
-	Route::resource('/roles', 'RolesController');
 
-	/*
-	 * closure pages
-	 */
-	Route::get('/', [
-		'as' 	=> 'admin',
-		'uses'	=> 'AdminPageController@index',
-	]);
+
+
+Route::get('/category/{slug}', 'Site\CategoryController@show')->name('categories.show');
+Route::get('/product/{slug}', 'Site\ProductController@show')->name('product.show');
+Route::post('/product/add/cart', 'Site\ProductController@addToCart')->name('product.add.cart');
+Route::get('/cart', 'Site\CartController@getCart')->name('checkout.cart');
+Route::get('/cart/item/{id}/remove', 'Site\CartController@removeItem')->name('checkout.cart.remove');
+Route::get('/cart/clear', 'Site\CartController@clearCart')->name('checkout.cart.clear');
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/checkout', 'Site\CheckoutController@getCheckout')->name('checkout.index');
+    Route::post('/checkout/order', 'Site\CheckoutController@placeOrder')->name('checkout.place.order');
+    Route::get('checkout/payment/complete', 'Site\CheckoutController@complete')->name('checkout.payment.complete');
+    Route::get('account/orders', 'Site\AccountController@getOrders')->name('account.orders');
 });
 
-Route::group(['prefix'	=> 'admin', 'middleware'	=> ['auth']], function()
-	{
-		Route::resource('/users', 'UsersController');
-	}
-);
 
-Route::group(['prefix' => 'home', 'middleware' => ['auth']], function()
-{
-	Route::get('/user/profile/settings', [
-		'as' 	=> 'settings',
-		'uses'	=> 'UserPageController@settings',
-	]);
-	Route::get('/profile', [
-		'as' 	=> 'profile',
-		'uses'	=> 'UserPageController@profile',
-	]);
-	Route::post('/user/profile', [
-		'as'	=> 'profile.update',
-		'uses'	=> 'UserPageController@update_image'
-	]);
-	Route::post('/user/password/profile', [
-		'as'	=> 'password.update',
-		'uses'	=> 'UserController@changePassword'
-	]);
-	
-	Route::get('/user', [
-		'as' 	=> 'userhome',
-		'uses'	=> 'HomeController@userIndex'
-	]);
-});
 
 Route::group(['prefix' => 'web', 'middleware' => 'web'], function(){
 	// about page
@@ -88,26 +88,6 @@ Route::group(['prefix' => 'web', 'middleware' => 'web'], function(){
 		'as' 	=> 'blog-single',
 		'uses' 	=> 'PagesController@blogsingle',
 	]);
-	// cart page
-	Route::get('cart', [
-		'as' 	=> 'cart',
-		'uses' 	=> 'PagesController@cart',
-	]);
-	// checkout page
-	Route::get('checkout', [
-		'as' 	=> 'checkout',
-		'uses' 	=> 'PagesController@checkout',
-	]);
-	// product-single page
-	Route::get('productsingle', [
-		'as' 	=> 'product-single',
-		'uses' 	=> 'PagesController@productsingle',
-	]);
-	// shop page
-	Route::get('shop', [
-		'as' 	=> 'shop',
-		'uses' 	=> 'PagesController@shop',
-	]);
 	// wishlist page
 	Route::get('wishlist', [
 		'as' 	=> 'wishlist',
@@ -117,11 +97,6 @@ Route::group(['prefix' => 'web', 'middleware' => 'web'], function(){
 	Route::get('contact', [
 		'as'  => 'contact',
 		'uses' => 'PagesController@contact',
-	]);
-	// career page
-	Route::get('careers', [
-		'as'  => 'careers',
-		'uses' => 'PagesController@careers',
 	]);
 	// faq page
 	Route::get('faq', [
@@ -143,6 +118,14 @@ Route::group(['prefix' => 'web', 'middleware' => 'web'], function(){
 		'as'  => 'terms',
 		'uses' => 'PagesController@terms',
 	]);
+
 });
+
+
+
+
+
+
+
 
 
