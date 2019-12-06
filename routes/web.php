@@ -64,6 +64,7 @@ Route::get('/cart/item/{id}/remove', 'Site\CartController@removeItem')->name('ch
 Route::get('/cart/clear', 'Site\CartController@clearCart')->name('checkout.cart.clear');
 
 Route::group(['middleware' => ['auth']], function () {
+	
     Route::get('/checkout', 'Site\CheckoutController@getCheckout')->name('checkout.index');
     Route::post('/checkout/order', 'Site\CheckoutController@placeOrder')->name('checkout.place.order');
     Route::get('checkout/payment/complete', 'Site\CheckoutController@complete')->name('checkout.payment.complete');
