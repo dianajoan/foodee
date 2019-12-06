@@ -2,13 +2,18 @@
 
 namespace App\Providers;
 
-use App\Models\Setting;
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Schema;
 use Config;
+use App\Models\Setting;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\ServiceProvider;
 
-class SettingsServiceProvider extends ServiceProvider
+class SettingServiceProvider extends ServiceProvider
 {
+    /**
+     * @var bool
+     */
+    protected $defer = false;
+
     /**
      * Register services.
      *
