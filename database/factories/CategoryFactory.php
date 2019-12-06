@@ -2,7 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Models\Categories;
+use App\Models\Category;
 use Faker\Generator as Faker;
 
 $factory->define(Categories::class, function (Faker $faker) {
