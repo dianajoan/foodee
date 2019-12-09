@@ -2,60 +2,59 @@
 
 namespace App\Models;
 
-use App\Models\Product;
-use App\Models\Category;
-use TypiCMS\NestableTrait;
-use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Order;
+use App\Models\Product;
+use App\User;
 
 class Category extends Model
 {
-    use NestableTrait;
     /**
-     * @var string
-     */
-    protected $table = 'categories';
-    /**
+     * The attributes that are mass assignable.
+     *
      * @var array
      */
     protected $fillable = [
-        'name', 'slug', 'description', 'parent_id', 'featured', 'menu', 'image'
+        'name','display_name','description',
+        'categories_id','user_id','type'
     ];
+
     /**
+     * The string variable is for the table.
+     *
      * @var array
      */
-    protected $casts = [
-        'parent_id' =>  'integer',
-        'featured'  =>  'boolean',
-        'menu'      =>  'boolean'
-    ];
-    /**
-     * @param $value
+    protected $table = 'categories';
+
+    /*
+     * belongs to table
      */
-    public function setNameAttribute($value)
+    public function users()
     {
-        $this->attributes['name'] = $value;
-        $this->attributes['slug'] = Str::slug($value);
+        return $this->belongsTo(User::class);
     }
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+
+    /*
+     * belongs to table
      */
-    public function children()
+    public function categories()
     {
-        return $this->hasMany(Category::class, 'parent_id');
+        return $this->belongsTo(Category::class);
     }
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+
+    /*
+     * Has many relationship to table
      */
-    public function parent()
+    public function orders()
     {
-        return $this->belongsTo(Category::class, 'parent_id');
+        return $this->hasMany(Order::class);
     }
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+
+    /*
+     * Has many relationship to table
      */
     public function products()
     {
-        return $this->belongsToMany(Product::class, 'product_categories', 'category_id', 'product_id');
+        return $this->hasMany(Product::class);
     }
 }

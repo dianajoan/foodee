@@ -1,9 +1,9 @@
-@extends('layouts.auth')
+@extends('system.auth')
 @section('title') Password Update @endsection
 
 @section('content')
 
-<div class="container-login100" style="background-image: url('{{ asset('images/bg-01.jpg') }}');">
+<div class="container-login100" style="background-image: url('{{ asset('auth/images/bg-01.jpg') }}');">
         <div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
             @if (session('status'))
                 <div class="alert alert-success" role="alert">

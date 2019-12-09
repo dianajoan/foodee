@@ -7,43 +7,76 @@
 |
 */
 
-Auth::routes();
-require 'admin.php';
+Auth::routes(['verify' => true]);
 
-Route::view('/', 'site.pages.home');
+Route::view('/', 'home');
 
-Route::get('/category/{slug}', 'Site\CategoryController@show')->name('categories.show');
-Route::get('/product/{slug}', 'Site\ProductController@show')->name('product.show');
-Route::post('/product/add/cart', 'Site\ProductController@addToCart')->name('product.add.cart');
-Route::get('/cart', 'Site\CartController@getCart')->name('checkout.cart');
-Route::get('/cart/item/{id}/remove', 'Site\CartController@removeItem')->name('checkout.cart.remove');
-Route::get('/cart/clear', 'Site\CartController@clearCart')->name('checkout.cart.clear');
+Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth','verified','role:super-admin|admin']], function(){
+    Route::resource('/roles', 'RoleController');
+    Route::resource('/permissions', 'PermissionController');
+    /*
+     * closure pages
+     */
+    Route::get('/', [
+      'as'  => 'admin',
+      'uses'  => 'AdminPageController@index',
+    ]);
+  }
+);
 
-    Route::get('/checkout', 'Site\CheckoutController@getCheckout')->name('checkout.index');
-    Route::post('/checkout/order', 'Site\CheckoutController@placeOrder')->name('checkout.place.order');
-    Route::get('checkout/payment/complete', 'Site\CheckoutController@complete')->name('checkout.payment.complete');
-    Route::get('account/orders', 'Site\AccountController@getOrders')->name('account.orders');
+Route::group(['prefix'  => 'admin', 'middleware'  => ['auth','verified']], function()
+  {
+    Route::resource('/users', 'UserController');
+  }
+);
+
+Route::group(['prefix' => 'home', 'middleware' => 'web'], function(){
+
+  Route::resource('{type}/{id}/products', 'ProductController');
+
+});
+
+
+Route::group(['prefix' => 'home', 'middleware' => ['auth','verified']], function(){
+
+  Route::resource('{type}/{id}/orders', 'OrderController');
+  Route::resource('categories', 'CategoryController');
+  Route::resource('user/gallery/images', 'ImageController');
+  Route::resource('user/galleries', 'GalleryController');
+
+  // closures
+  
+  Route::get('/user/profile/settings', [
+    'as'  => 'settings',
+    'uses'  => 'UserPageController@settings',
+  ]);
+  Route::get('/user/profile', [
+    'as'  => 'profile',
+    'uses'  => 'UserPageController@profile',
+  ]);
+  Route::get('/user/profile/timeline', [
+    'as'  => 'settings',
+    'uses'  => 'UserPageController@settings',
+  ]);
+  Route::post('/user/profile', [
+    'as'  => 'profile.update',
+    'uses'  => 'UserPageController@update_image'
+  ]);
+  Route::post('/user/password/profile', [
+    'as'  => 'password.update',
+    'uses'  => 'UserController@changePassword'
+  ]);
 });
 
 
 
-Route::group(['prefix' => 'web', 'middleware' => 'web'], function(){
+Route::group(['prefix' => 'home', 'middleware' => 'web'], function(){
 	// about page
 	Route::get('about', [
 		'as' 	=> 'about',
 		'uses' 	=> 'PagesController@about',
-	]);
-	// blog page
-	Route::get('blog', [
-		'as' 	=> 'blog',
-		'uses' 	=> 'PagesController@blog',
-	]);
-	// blog page
-	Route::get('blogsingle', [
-		'as' 	=> 'blog-single',
-		'uses' 	=> 'PagesController@blogsingle',
 	]);
 	// contact page
 	Route::get('contact', [

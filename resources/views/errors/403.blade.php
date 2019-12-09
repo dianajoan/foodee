@@ -1,4 +1,4 @@
-@extends('site.app')
+@extends('system.app')
 @section('title') Restricted Access @endsection
 
 @section('content')

@@ -174,9 +174,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\SettingsServiceProvider::class,
-        App\Providers\ViewComposerServiceProvider::class,
-        App\Providers\RepositoryServiceProvider::class,
         // Permissions and Roles
         Zizaco\Entrust\EntrustServiceProvider::class,
 

@@ -1,9 +1,9 @@
-@extends('site.auth')
+@extends('system.auth')
 @section('title') Verify Your Email @endsection
 
 @section('content')
 
-<div class="container-login100" style="background-image: url('{{ asset('images/bg-01.jpg') }}');">
+<div class="container-login100" style="background-image: url('{{ asset('auth/images/bg-01.jpg') }}');">
         <div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
 
                 <span class="login100-form-title p-b-37">

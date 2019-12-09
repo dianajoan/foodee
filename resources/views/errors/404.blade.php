@@ -1,4 +1,4 @@
-@extends('site.app')
+@extends('system.app')
 @section('title') Page not found @endsection
 
 @section('content')

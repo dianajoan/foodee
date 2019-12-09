@@ -3,65 +3,50 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
-use App\Models\ProductImage;
-use App\Models\ProductAttribute;
 use App\Models\Category;
+use App\Models\Image;
+use App\User;
 
 class Product extends Model
 {
     /**
-     * @var string
-     */
-    protected $table = 'products';
-
-    /**
+     * The attributes that are mass assignable.
+     *
      * @var array
      */
     protected $fillable = [
-        'sku', 'name', 'slug', 'description', 'quantity',
-        'weight', 'price', 'sale_price', 'status', 'featured',
+        'product_name','product_id','description','previous_price',
+        'current_price','categories_id','user_id','status'
     ];
 
     /**
+     * The string variable is for the table.
+     *
      * @var array
      */
-    protected $casts = [
-        'quantity'  =>  'integer',
-        'status'    =>  'boolean',
-        'featured'  =>  'boolean'
-    ];
+    protected $table = 'products';
 
-     /**
-     * @param $value
+    /*
+     * belongs to table
      */
-    public function setNameAttribute($value)
+    public function categories()
     {
-        $this->attributes['name'] = $value;
-        $this->attributes['slug'] = Str::slug($value);
+        return $this->belongsTo(Category::class);
     }
 
-    /**
-	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
-	 */
-	public function images()
-	{
-	    return $this->hasMany(ProductImage::class);
-	}
+    /*
+     * has many images
+     */
+    public function images()
+    {
+        return $this->hasMany(Image::class);
+    }
 
-	/**
-	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
-	 */
-	public function attributes()
-	{
-	    return $this->hasMany(ProductAttribute::class);
-	}
-
-	/**
-	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-	 */
-	public function categories()
-	{
-	    return $this->belongsToMany(Category::class, 'product_categories', 'product_id', 'category_id');
-	}
+    /*
+     * belongs to table
+     */
+    public function users()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

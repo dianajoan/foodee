@@ -3,24 +3,60 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\OrderItem;
+use App\Models\Category;
+use App\Models\Product;
 use App\User;
 
 class Order extends Model
 {
-    protected $table = 'orders';
-
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
-        'order_number', 'user_id', 'status', 'grand_total', 'item_count', 'payment_status', 'payment_method','first_name', 'last_name', 'address', 'city', 'country', 'post_code', 'phone_number', 'notes'
+        'categories_id',
+        'product_id',
+        'date_time',
+        'quantity',
+        'description',
+        'user_id',
+        'status'
     ];
 
-    public function user()
+    /**
+     * The string variable is for the table.
+     *
+     * @var array
+     */
+    protected $table = 'orders';
+
+    /**
+     * The relationship method
+     *
+     * as this table.
+     */
+    public function products()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(Product::class);
+    }
+    
+    /**
+     * Belonds to relationship for users 
+     *
+     */
+    public function users()
+    {
+        return $this->belongsTo(User::class);
     }
 
-    public function items()
+    /*
+     * belongs to table
+     */
+    public function categories()
     {
-        return $this->hasMany(OrderItem::class);
+        return $this->belongsTo(Category::class);
     }
+
+
 }
