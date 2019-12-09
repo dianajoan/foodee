@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Http\Request;
 use App\Models\Role;
 use App\User;
 
@@ -20,7 +19,7 @@ class UsersTableSeeder extends Seeder
         $user_super = new User();
         $user_super->name = 'Diana Joanita';
         $user_super->email = 'dianajoanita900@gmail.com';
-        $user_super->password = bcrypt('dollar');
+        $user_super->password = bcrypt('dollar256');
         $user_super->gender = 'Female';
         $user_super->work_address = 'Kampala, Uganda';
         $user_super->place_of_work = 'Kampala, Uganda';
@@ -37,7 +36,7 @@ class UsersTableSeeder extends Seeder
         $user_admin = new User();
         $user_admin->name = 'User One'; 
         $user_admin->email = 'user@user.com';
-        $user_admin->password = bcrypt('dollar');
+        $user_admin->password = bcrypt('dollar256');
         $user_admin->gender = 'Male';
         $user_super->work_address = 'Kampala, Uganda';
         $user_super->place_of_work = 'Kampala, Uganda';
