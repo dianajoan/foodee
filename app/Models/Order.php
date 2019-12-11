@@ -20,6 +20,7 @@ class Order extends Model
         'date_time',
         'quantity',
         'description',
+        'cart',
         'user_id',
         'status'
     ];

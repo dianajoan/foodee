@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Session;
+use Auth;
+use App\Models\Cart;
+use App\Models\Order;
 
 class ProductController extends Controller
 {
@@ -55,7 +59,7 @@ class ProductController extends Controller
     public function store(Request $request, $type=null, $item_id)
     {
         request()->validate([
-            'product_name'  => 'required',
+            'name'  => 'required',
             'user_id'       => 'required',
         ]);
         Product::create($request->all());
@@ -102,7 +106,7 @@ class ProductController extends Controller
     public function update(Request $request, $type=null, $item_id, $id)
     {
         request()->validate([
-            'product_name'  => 'required',
+            'name'  => 'required',
             'user_id'       => 'required',
         ]);
         Product::find($id)->update($request->all());
@@ -120,5 +124,84 @@ class ProductController extends Controller
         $item = Product::where('id',$id)->get()->first();
         $item->delete();
         return redirect()->route('products.index',['type','item_id'])->with('danger', 'Product deleted successfully!');
+    }
+
+    public function getDisplay()
+    {
+        $products   = Product::latest()->paginate(20);
+        return view('system.products.display', ['products' => $products]);
+    }
+
+    public function getAddToCart(Request $request, $id) {
+        $product = Product::find($id);
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->add($product, $product->id);
+
+        $request->session()->put('cart', $cart);
+//        dd($request->session()->get('cart'));
+        return redirect()->route('product.display');
+    }
+
+    public function getReduceByOne($id) {
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->reduceByOne($id);
+
+        if(count($cart->items) > 0) {
+            Session::put('cart', $cart);
+        } else {
+            Session::forget('cart');
+        }
+
+        return redirect()->route('product.cart');
+    }
+
+    public function getRemoveItem($id) {
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->removeItem($id);
+
+        if(count($cart->items) > 0) {
+            Session::put('cart', $cart);
+        } else {
+            Session::forget('cart');
+        }
+
+        return redirect()->route('product.cart');
+    }
+
+    public function getCart() {
+        if (!Session::has('cart')) {
+            return view('system.cart');
+        }
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+        return view('system.cart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
+    }
+
+    public function getCheckout(){
+        if (!Session::has('cart')) {
+            return view('system.cart');
+        }
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+        $total = $cart->totalPrice;
+        return view('system.checkout', ['total' => $total]);
+    }
+
+    public function postCheckout(Request $request) {
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+
+        $order = new Order;
+        $order->cart = serialize($cart);
+        $order->address = $request->input('address');
+        $order->name = $request->input('name');
+
+        Auth::user()->orders()->save($order);
+        Session::forget('cart');
+
+        return redirect()->route('product.display');
     }
 }

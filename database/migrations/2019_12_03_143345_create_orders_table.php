@@ -20,6 +20,7 @@ class CreateOrdersTable extends Migration
             $table->dateTime('date_time')->nullable();
             $table->integer('quantity')->default(1);
             $table->text('description')->nullable();
+            $table->text('cart');
             $table->bigInteger('user_id')->unsigned()->index();
             $table->string('status')->default('pending');
             $table->timestamps();

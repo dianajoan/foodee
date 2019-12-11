@@ -21,8 +21,8 @@ class CreateGalleriesTable extends Migration
             $table->bigInteger('gallery_id')->nullable()->unsigned()->index();
             $table->string('image')->nullable();
             $table->string('title')->nullable();
-            $table->bigInteger('user_id')->unsigned()->index();
             $table->string('status')->default('visible');
+            $table->bigInteger('user_id')->unsigned()->index();
             $table->timestamps();
 
             $table->foreign('gallery_id')->references('id')->on('galleries')->onDelete('cascade');

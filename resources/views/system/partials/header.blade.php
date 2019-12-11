@@ -33,18 +33,32 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-                <a class="dropdown-item" href="#">Checkout</a>
-                <a class="dropdown-item" href="#">Order</a>
+                <a class="dropdown-item" href="{{ route('product.display') }}">Products</a>
+                <a class="dropdown-item" href="{{ route('checkout') }}">Checkout</a>
+                
               </div>
             </li>
 
+            {{-- categories --}}
+              <!-- {{ $vproducts = App\Models\Category::where('type','products-vegetables')->get() }} -->
+              <!-- {{ $fproducts = App\Models\Category::where('type','products-fruits')->get() }} -->
+              <!-- {{ $jproducts = App\Models\Category::where('type','products-juice')->get() }} -->
+              <!-- {{ $dproducts = App\Models\Category::where('type','products-dried')->get() }} -->
            <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-                <a class="dropdown-item" href="#">Vegetables</a>
-                <a class="dropdown-item" href="#">Fruits</a>
-                <a class="dropdown-item" href="#">Juice</a>
-                <a class="dropdown-item" href="#">Dried</a>
+                @foreach($vproducts as $product)
+                  <a class="dropdown-item" href="{{ route('products.index',[$product->name,0]) }}">{{ $product->display_name }}</a>
+                @endforeach
+                @foreach($fproducts as $product)
+                  <a class="dropdown-item" href="{{ route('products.index',[$product->name,0]) }}">{{ $product->display_name }}</a>
+                @endforeach
+                @foreach($jproducts as $product)
+                  <a class="dropdown-item" href="{{ route('products.index',[$product->name,0]) }}">{{ $product->display_name }}</a>
+                @endforeach
+                @foreach($dproducts as $product)
+                  <a class="dropdown-item" href="{{ route('products.index',[$product->name,0]) }}">{{ $product->display_name }}</a>
+                @endforeach
               </div>
             </li>
 
@@ -69,7 +83,7 @@
 
               </div>
             </li>
-            <li class="nav-item cta cta-colored"><a href="#" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+            <li class="nav-item cta cta-colored"><a href="{{route('product.cart')}}" class="nav-link"><span class="icon-shopping_cart"></span>[{{Session::has('cart') ? Session::get('cart')->totalQty : ''}} ]</a></li>
 
           </ul>
         </div>

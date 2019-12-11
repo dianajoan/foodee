@@ -34,7 +34,34 @@ Route::group(['prefix'  => 'admin', 'middleware'  => ['auth','verified']], funct
 
 Route::group(['prefix' => 'home', 'middleware' => 'web'], function(){
 
-  Route::resource('{type}/{id}/products', 'ProductController');
+      Route::resource('{type}/{id}/products', 'ProductController');
+
+      Route::get('/products', [
+          'uses' => 'ProductController@getDisplay',
+          'as' => 'product.display',
+      ]);
+
+      Route::get('/add-to-cart/{id}', [
+       'uses' => 'ProductController@getAddToCart',
+       'as' => 'product.addToCart'
+      ]);
+
+      Route::get('/reduce/{id}', [
+        'uses' => 'ProductController@getReduceByOne',
+        'as' => 'product.reduceByOne'
+      ]);
+
+      Route::get('/remove/{id}', [
+        'uses' => 'ProductController@getRemoveItem',
+        'as' => 'product.remove'
+      ]);
+
+      Route::get('/shopping-cart', [
+        'uses' => 'ProductController@getCart',
+        'as' => 'product.cart'
+      ]);
+
+      
 
 });
 
@@ -45,6 +72,16 @@ Route::group(['prefix' => 'home', 'middleware' => ['auth','verified']], function
   Route::resource('categories', 'CategoryController');
   Route::resource('user/gallery/images', 'ImageController');
   Route::resource('user/galleries', 'GalleryController');
+
+  Route::get('/checkout', [
+    'uses' => 'ProductController@getCheckout',
+    'as' => 'checkout',
+  ]);
+
+  Route::post('/checkout', [
+    'uses' => 'ProductController@postCheckout',
+    'as' => 'checkout',
+  ]);
 
   // closures
   
