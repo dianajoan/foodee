@@ -1,6 +1,6 @@
 <!-- Footer -->
-<footer class="site-footer">
-    <div class="footer-inner bg-white">
+<footer class="site-footer" style="background-color: #D2B48C;">
+    <div class="footer-inner" style="background-color: #D2B48C;">
         <div class="row">
             <div class="col-sm-6">
                 Copyright &copy; 2019 {{ config('app.name') }}

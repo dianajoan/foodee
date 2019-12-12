@@ -19,10 +19,15 @@ class CreateOrdersTable extends Migration
             $table->bigInteger('product_id')->nullable()->unsigned()->index();            
             $table->dateTime('date_time')->nullable();
             $table->integer('quantity')->default(1);
+            $table->string('address')->nullable();
+            $table->string('country')->nullable();
+            $table->string('city')->nullable();
+            $table->string('post_code')->nullable();
+            $table->string('phone_number')->nullable();
             $table->text('description')->nullable();
             $table->text('cart');
-            $table->bigInteger('user_id')->unsigned()->index();
             $table->string('status')->default('pending');
+            $table->bigInteger('user_id')->unsigned()->index();
             $table->timestamps();
             
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

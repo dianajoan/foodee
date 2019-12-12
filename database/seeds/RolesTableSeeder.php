@@ -34,6 +34,12 @@ class RolesTableSeeder extends Seeder
         $role_user->description = 'A user signed up with a client account to ' . config('app.name');
         $role_user->save();
 
+        $role_guest = new Role();
+        $role_guest->name = 'guest';
+        $role_guest->display_name = 'Guest User';
+        $role_guest->description = 'A user reviewing the system';
+        $role_guest->save();
+
         // attaching roles to super-admin
         $permissions = Permission::all();
 

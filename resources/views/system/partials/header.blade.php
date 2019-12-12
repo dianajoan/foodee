@@ -83,7 +83,7 @@
 
               </div>
             </li>
-            <li class="nav-item cta cta-colored"><a href="{{route('product.cart')}}" class="nav-link"><span class="icon-shopping_cart"></span>[{{Session::has('cart') ? Session::get('cart')->totalQty : ''}} ]</a></li>
+            <li class="nav-item cta cta-colored"><a href="{{route('product.cart')}}" class="nav-link"><span class="icon-shopping_cart"></span>[ <b style="color: red;">{{Session::has('cart') ? Session::get('cart')->totalQty : ''}} </b> ]</a></li>
 
           </ul>
         </div>

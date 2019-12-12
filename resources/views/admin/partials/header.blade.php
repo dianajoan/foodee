@@ -1,7 +1,7 @@
 <!-- Header-->
-        <header id="header" class="header">
+        <header id="header" class="header" style="background-color: #D2B48C;">
             <div class="top-left">
-                <div class="navbar-header">
+                <div class="navbar-header" style="background-color: #D2B48C;">
                     <a class="navbar-brand" href="{{ url('/home') }}">{{ config('app.name') }}</a>
                     <a class="navbar-brand hidden" href="{{ url('/') }}">{{ config('app.name') }}</a>
                     <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
@@ -85,6 +85,7 @@
 
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{Auth::user()->name}}
                             <img class="user-avatar rounded-circle" src="{{ asset('backend/images/admin.jpg') }}" alt="User Avatar">
                         </a>
 

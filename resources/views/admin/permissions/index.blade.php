@@ -19,7 +19,6 @@
                         <ol class="breadcrumb text-right">
                             <li><a href="{{ route('home') }}">Home</a></li>
                             <li><a href="{{ route('admin') }}">Admin</a></li>
-                            <li><a href="{{ route('roles.index') }}">Roles</a></li>
                             <li class="active">All Permissions</li>
                         </ol>
                     </div>
@@ -36,84 +35,40 @@
 <div class="col-lg-10">
     <div class="card">
         <div class="card-header">
-            <strong class="card-title">All Permissions</strong>
+            <strong class="card-title">All Permissions</strong><a href="{{ route('permissions.create') }}" style="float: right;" class="btn btn-sm btn-info"> <i class="fa-plus fa"></i>Add New</a>
         </div>
         <div class="table-stats order-table ov-h">
             <table class="table ">
                 <thead>
                     <tr>
                         <th class="serial">#</th>
-                        <th class="avatar">Avatar</th>
-                        <th>ID</th>
                         <th>Name</th>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th>Status</th>
+                        <th>Display Name</th>
+                        <th>Description</th>
+                        <th>Date Added</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
+                <?php $i=0; ?>
+                    @foreach($permissions as $permission)
+
                     <tr>
-                        <td class="serial">1.</td>
-                        <td class="avatar">
-                            <div class="round-img">
-                                <a href="#"><img class="rounded-circle" src="{{ asset('backend/images/avatar/1.jpg') }}" alt=""></a>
+                        <td>{{ ++$i }}</td>
+                        <td>{{ $permission->name }}</td>
+                        <td>{{ $permission->display_name }}</td>
+                        <td>{{ $permission->description }}</td>
+                        <td>{{ $permission->created_at  }}</td>
+                        <td>
+                            <div class="row text-center" style="margin-left: 3px;">
+                                <a href="{{ route('permissions.show', $permission->id) }}" class="col-5 btn btn-sm btn-success" title="Permissions Details" style="margin: 2px;"><i class="fa fa-info-circle"></i></a>
+                                <a href="{{ route('permissions.edit', $permission->id) }}" class=" col-5 btn btn-sm btn-primary" style="margin: 2px;"><i class="fa fa-edit" title="Edit Permissions"></i></a>
                             </div>
                         </td>
-                        <td> #5469 </td>
-                        <td>  <span class="name">Louis Stanley</span> </td>
-                        <td> <span class="product">iMax</span> </td>
-                        <td><span class="count">231</span></td>
-                        <td>
-                            <span class="badge badge-complete">Complete</span>
-                        </td>
                     </tr>
-                    <tr>
-                        <td class="serial">2.</td>
-                        <td class="avatar">
-                            <div class="round-img">
-                                <a href="#"><img class="rounded-circle" src="{{ asset('backend/images/avatar/2.jpg') }}" alt=""></a>
-                            </div>
-                        </td>
-                        <td> #5468 </td>
-                        <td>  <span class="name">Gregory Dixon</span> </td>
-                        <td> <span class="product">iPad</span> </td>
-                        <td><span class="count">250</span></td>
-                        <td>
-                            <span class="badge badge-complete">Complete</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="serial">3.</td>
-                        <td class="avatar">
-                            <div class="round-img">
-                                <a href="#"><img class="rounded-circle" src="{{ asset('backend/images/avatar/3.jpg') }}" alt=""></a>
-                            </div>
-                        </td>
-                        <td> #5467 </td>
-                        <td>  <span class="name">Catherine Dixon</span> </td>
-                        <td> <span class="product">SSD</span> </td>
-                        <td><span class="count">250</span></td>
-                        <td>
-                            <span class="badge badge-complete">Complete</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="serial">4.</td>
-                        <td class="avatar">
-                            <div class="round-img">
-                                <a href="#"><img class="rounded-circle" src="{{ asset('backend/images/avatar/4.jpg') }}" alt=""></a>
-                            </div>
-                        </td>
-                        <td> #5466 </td>
-                        <td>  <span class="name">Mary Silva</span> </td>
-                        <td> <span class="product">Magic Mouse</span> </td>
-                        <td><span class="count">250</span></td>
-                        <td>
-                            <span class="badge badge-pending">Pending</span>
-                        </td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
+            {{ $permissions->links() }}
         </div> <!-- /.table-stats -->
     </div>
 </div>
@@ -123,4 +78,16 @@
 </div><!-- .animated -->
 </div><!-- .content -->
 
+@endsection
+
+@section('scripts')
+<script src="{{ asset('backend/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script>
+        $('#example23').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ]
+        });
+    </script>
 @endsection

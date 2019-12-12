@@ -31,7 +31,6 @@
     					        <th>Product name</th>
     					        <th>Price</th>
     					        <th>Quantity</th>
-    					        <th>Total</th>
     					        <th>Actions</th>
     					      </tr>
     					    </thead>
@@ -50,29 +49,26 @@
             					        </td>
             					        
             					        <td class="price">
-                                            ${{$product['previous_price']}}
+                                            ${{$product['item']['current_price']}}
                                         </td>
             					        
             					        <td class="quantity">
             					        	<div class="input-group mb-3">
-            				             	     <input type="number" name="quantity" class="quantity form-control input-number" value="{{$product['qty']}}" min="1" max="100">
+            				             	  <input type="number" name="quantity" class="quantity form-control input-number" value="{{$product['qty']}}" min="1" max="100">
             				          	    </div>
             				            </td>
-                                        <td class="total">
-                                            <strong>
-                                                Total: ${{$totalPrice}}
-                                            </strong>
+
+                                        <div class="row text-center" style="margin-left: 3px;">
+                                            <td class="product-remove">
+                                            <a href="{{route('product.remove', ['id' => $product['item']['id']])}}" title="Delete" ><span class="ion-ios-close"></span></a>
                                         </td>
-                                        <td>
-                                            <div class="row text-center" style="margin-left: 3px;">
-                                                <a href="{{route('product.reduceByOne', ['id' => $product['item']['id']])}}" class="col-5 btn btn-sm btn-success" title="Remove cart" style="margin: 2px;"><i class="fa fa-info-circle"></i></a>
-                                                <a href="{{route('product.remove', ['id' => $product['item']['id']])}}" class=" col-5 btn btn-sm btn-primary" style="margin: 2px;"><i class="fa fa-edit" title="Delete all"></i></a>
-                                            </div>
-                                        </td>
+                                    </div>
         					        </tr><!-- END TR-->
                                 @endforeach
     					    </tbody>
     					  </table>
+
+                          <p style="float: right; color: red;">Total: <b>${{$totalPrice}}</b></p>
 
                           <p><a href="{{ route('checkout') }}" class="btn btn-primary py-3 px-3">Proceed to Checkout</a></p>
 

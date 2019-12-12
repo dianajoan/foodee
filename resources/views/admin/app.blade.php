@@ -69,11 +69,13 @@
 <body>
     
     @include('admin.partials.sidebar')
+    
 
     <!-- Right Panel -->
     <div id="right-panel" class="right-panel">
 
         @include('admin.partials.header')
+        @include('admin.partials.notification')
         
         @yield('content')
         

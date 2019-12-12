@@ -70,6 +70,7 @@
                     @endforeach
                 </tbody>
             </table>
+            {{ $roles->links() }}
         </div> <!-- /.table-stats -->
     </div>
 </div>
