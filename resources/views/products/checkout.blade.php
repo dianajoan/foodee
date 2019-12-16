@@ -29,41 +29,7 @@
 		          	<div class="col-md-6">
 		                <div class="form-group">
 		                	<label for="name">Name</label>
-		                  <input type="text"  value="{{ auth()->user()->name }}"  class="form-control" placeholder="" disabled="">
-		                </div>
-		            </div>
-	                <div class="w-100"></div>
-			        <div class="col-md-6">
-		            	<div class="form-group">
-	                		<label for="towncity">State/Country</label>
-	                  		<input type="text" name="country" class="form-control" placeholder="">
-	                	</div>
-			        </div>
-			        <div class="w-100"></div>
-			        <div class="col-md-6">
-			            <div class="form-group">
-		                	<label for="streetaddress">Street Address</label>
-		                  	<input type="text" name="address" class="form-control" placeholder="House number and street name">
-		                </div>
-			        </div>
-			        <div class="w-100"></div>
-			        <div class="col-md-6">
-			            <div class="form-group">
-		                	<label for="towncity">Town / City</label>
-		                  	<input type="text" name="city" class="form-control" placeholder="">
-		                </div>
-			        </div>
-			        <div class="col-md-6">
-			            <div class="form-group">
-			            	<label for="postcodezip">Postcode / ZIP *</label>
-		                  	<input type="text" name="post_code" class="form-control" placeholder="">
-		                </div>
-			        </div>
-			        <div class="w-100"></div>
-			        <div class="col-md-6">
-		                <div class="form-group">
-		                	<label for="phone">Phone</label>
-		                  	<input type="text" name="phone_number" class="form-control" placeholder="">
+		                  <input type="text" name="name"  class="form-control" placeholder="">
 		                </div>
 		            </div>
 		            <div class="col-md-6">
@@ -72,27 +38,56 @@
 		                  	<input type="text" value="{{ auth()->user()->email }}"  class="form-control" placeholder="" disabled>
 		                </div>
 	                </div>
-	                <div class="w-100"></div>
+			        <div class="w-100"></div>
+			        <div class="col-md-6">
+			            <div class="form-group">
+		                	<label for="address">Address</label>
+		                  	<input type="text" name="address" class="form-control" placeholder="" required>
+		                </div>
+			        </div>
+			        <div class="col-md-6">
+			            <div class="form-group">
+                            <label for="card-name">Card Holder Name</label>
+                            <input type="text" id="card-name" class="form-control" required>
+                        </div>
+			        </div>
+			        <div class="col-md-6">
+			            <div class="form-group">
+                            <label for="card-number">Credit Card Number</label>
+                            <input type="text"  id="card-number" class="form-control" required>
+                        </div>
+			        </div>
 			        <div class="col-md-6">
 		                <div class="form-group">
-		                	<label for="description">Description</label>
-		                  	<textarea class="form-control" name="description" rows="6"></textarea>
-		                </div>
+                            <label for="card-expiry-month">Expiration Month</label>
+                            <input type="text"  id="card-expiry-month" class="form-control" required>
+                        </div>
+		            </div>
+			        <div class="col-md-6">
+		                <div class="form-group">
+                            <label for="card-expiry-year">Expiration Year</label>
+                            <input type="text" name="card-expiry-year" id="card-expiry-year" class="form-control" required>
+                        </div>
+		            </div>
+			        <div class="col-md-6">
+		                <div class="form-group">
+                            <label for="card-cvc">CVC</label>
+                            <input type="text"  id="card-cvc" class="form-control" required>
+                        </div>
 		            </div>
 
 		            <div class="col-xl-5">
 			          <div class="row mt-5 pt-3">
-		          		<div class="col-md-12 d-flex mb-5">
-			          		<div class="cart-detail cart-total p-3 p-md-4">
-			          			<h3 class="billing-heading mb-4">Cart Total</h3>
+			          		<div class="col-md-12 d-flex mb-5">
+				          		<div class="cart-detail cart-total p-3 p-md-4">
+			          				<h3 class="billing-heading mb-4">Cart Total</h3>
 			          			
 			    					<p class="d-flex total-price">
 			    						<span>Total</span>
 			    						<span>${{$total}}</span>
 			    					</p>
-									</div>
-			          	</div>
-		          	
+								</div>
+				          	</div>
 							<button type="submit" class="btn btn-primary py-3 px-4">Place an order</button>
 						</div>
 			        </div>

@@ -15,21 +15,23 @@ class Order extends Model
      * @var array
      */
     protected $fillable = [
+        
+        'name',
+        'address',
+        'cart',
+        'card-number',
+        'card-name',
+        'card-expiry-month',
+        'card-expiry-year',
+        'card-cvc',
+        'user_id',
         'categories_id',
         'product_id',
-        'date_time',
-        'quantity',
-        'city',
-        'country',
-        'post_code',
-        'address',
-        'name',
-        'phone_number',
-        'description',
-        'cart',
-        'user_id',
         'status'
     ];
+
+
+ 
 
     /**
      * The string variable is for the table.

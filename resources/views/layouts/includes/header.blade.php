@@ -34,8 +34,7 @@
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
                 <a class="dropdown-item" href="{{ route('all-products') }}">All Products</a>
-                <a class="dropdown-item" href="{{ route('checkout') }}">Checkout</a>
-                <a class="dropdown-item" href="#">Orders</a>
+                
                 
               </div>
             </li>
@@ -60,7 +59,6 @@
 
                 @if(Auth::check())
 
-                <a class="dropdown-item" href="#">Profile</a>
                 <a class="dropdown-item" href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;"> @csrf </form>
 

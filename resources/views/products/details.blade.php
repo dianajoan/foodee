@@ -41,12 +41,11 @@
 					</div>
 
 				<p class="price">
-           <span class="mr-2 price-dc">${{$product->previous_price}}</span>
            <span class="price-sale">${{$product->current_price}}</span>
         </p>
 
 				<p>{{$product->description}}</p>
-        
+
 					<div class="row mt-4">
 						<div class="col-md-6">
 							<div class="form-group d-flex">
