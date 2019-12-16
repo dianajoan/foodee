@@ -1,4 +1,4 @@
-@extends('system.auth')
+@extends('layouts.auth')
 @section('title') Sign into Your Account @endsection
 
 

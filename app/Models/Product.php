@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Category;
 use App\Models\Image;
+use App\Models\Farmer;
 use App\User;
 
 class Product extends Model
@@ -15,8 +16,8 @@ class Product extends Model
      * @var array
      */
     protected $fillable = [
-        'name','description','previous_price', 'imagePath',
-        'current_price','categories_id','user_id','status'
+        'name','description','previous_price', 'imagePath', 'farmer_id', 'image_id',
+        'quantity', 'discount_rate', 'current_price','categories_id','user_id','status'
     ];
 
     /**
@@ -35,6 +36,14 @@ class Product extends Model
     }
 
     /*
+     * belongs to table
+     */
+    public function farmer()
+    {
+        return $this->belongsTo(Farmer::class);
+    }
+
+    /*
      * has many images
      */
     public function images()
@@ -48,5 +57,39 @@ class Product extends Model
     public function users()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function scopeLatestFirst($query)
+    {
+        return $query->orderBy('id', 'desc');
+    }
+
+    /*
+     * Scope for search books
+     */
+    public function scopeSearch($query, $term)
+    {
+        if($term)
+        {
+            $query->where(function ($q) use ($term){
+                $q->where('title', 'LIKE', "%{$term}%");
+
+                $q->orwhereHas('author', function ($qr) use ($term){
+                    $qr->where('name', 'LIKE', "%{$term}%");
+                });
+            });
+        }
+    }
+
+    /*
+     * Image Accessor
+     */
+    public function getImageUrlAttribute($value)
+    {
+        return asset('/').'assets/img/'.$this->image->file;
+    }
+    public function getDefaultImgAttribute($value)
+    {
+        return asset('/').'assets/img/'.'user-placeholder.png';
     }
 }

@@ -1,4 +1,4 @@
-@extends('system.app')
+@extends('layouts.master')
 @section('title') Contact @endsection
 
 @section('content')

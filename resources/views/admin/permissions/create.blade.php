@@ -1,4 +1,4 @@
-@extends('admin.app')
+@extends('layouts.admin-master')
 @section('title') Create Permission @endsection
 
 @section('content')

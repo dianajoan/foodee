@@ -21,7 +21,11 @@ class CreateProductsTable extends Migration
             $table->text('description')->nullable();
             $table->integer('previous_price')->nullable();
             $table->integer('current_price')->nullable();
-            $table->string('status')->default('In Stock');            
+            $table->string('status')->default('In Stock');
+             $table->integer('farmer_id')->unsigned()->index()->default( 1 );
+            $table->integer('image_id')->unsigned()->index()->default( 1 );
+            $table->bigInteger('quantity')->unsigned()->index()->default( 20 );
+            $table->integer('discount_rate')->nullable();          
             $table->bigInteger('user_id')->unsigned()->index()->default( 2 );
             $table->timestamps();
             

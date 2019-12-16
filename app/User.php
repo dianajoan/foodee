@@ -12,6 +12,7 @@ use App\Models\Gallery;
 use App\Models\Image;
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\Role;
 
 class User extends Authenticatable implements MustVerifyEmailContract
 {
@@ -82,6 +83,16 @@ class User extends Authenticatable implements MustVerifyEmailContract
      *
      * as galleries.
      */
+    public function role()
+    {
+        return $this->hasMany(Role::class);
+    }
+
+    /**
+     * The relationship method for galleries.
+     *
+     * as galleries.
+     */
     public function orders()
     {
         return $this->hasMany(Order::class);
@@ -95,6 +106,30 @@ class User extends Authenticatable implements MustVerifyEmailContract
     public function products()
     {
         return $this->hasMany(Product::class);
+    }
+
+      /*
+     * Admin Authentication
+     */
+    public function isAdmin()
+    {
+        if($this->role->name == 'Admin'  && $this->is_active == 1)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    /*
+     * Users Authentication
+     */
+    public function isUser()
+    {
+        if ($this->role->name == 'User')
+        {
+            return true;
+        }
+        return false;
     }
 
 }

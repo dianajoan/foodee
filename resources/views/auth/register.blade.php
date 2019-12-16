@@ -1,4 +1,4 @@
-@extends('system.auth')
+@extends('layouts.auth')
 @section('title') Create An Account @endsection
 
 @section('content')

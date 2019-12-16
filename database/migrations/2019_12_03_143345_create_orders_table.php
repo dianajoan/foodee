@@ -20,6 +20,7 @@ class CreateOrdersTable extends Migration
             $table->dateTime('date_time')->nullable();
             $table->integer('quantity')->default(1);
             $table->string('address')->nullable();
+            $table->string('name')->nullable();
             $table->string('country')->nullable();
             $table->string('city')->nullable();
             $table->string('post_code')->nullable();

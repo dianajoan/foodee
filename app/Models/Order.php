@@ -23,6 +23,7 @@ class Order extends Model
         'country',
         'post_code',
         'address',
+        'name',
         'phone_number',
         'description',
         'cart',

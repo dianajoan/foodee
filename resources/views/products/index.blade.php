@@ -1,4 +1,4 @@
-@extends('system.app')
+@extends('layouts.master')
 @section('title') Products @endsection
 
 @section('content')
@@ -20,7 +20,7 @@
     		<div class="row justify-content-center">
     			<div class="col-md-10 mb-5 text-center">
     				<ul class="product-category">
-    					<li><a href="{{ route('product.display') }}" class="active">All</a></li>
+    					<li><a href="{{ route('all-products') }}" class="active">All</a></li>
     					<li><a href="#">Vegetables</a></li>
     					<li><a href="#">Fruits</a></li>
     					<li><a href="#">Juice</a></li>
@@ -53,10 +53,10 @@
     	    					</div>
     	    					<div class="bottom-area d-flex px-3">
     	    						<div class="m-auto d-flex">
-    	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+    	    							<a href="{{route('product-details', $product->id)}}" class="add-to-cart d-flex justify-content-center align-items-center text-center" title="Product details">
     	    								<span><i class="ion-ios-menu"></i></span>
     	    							</a>
-    	    							<a href="{{route('product.addToCart', ['id' => $product->id])}}" class="buy-now d-flex justify-content-center align-items-center mx-1">
+    	    							<a href="{{route('product.addToCart', ['id' => $product->id])}}" class="buy-now d-flex justify-content-center align-items-center mx-1" title="Add to Cart">
     	    								<span><i class="ion-ios-cart"></i></span>
     	    							</a>
     	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
