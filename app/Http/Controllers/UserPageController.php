@@ -1,9 +1,15 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
+use App\User;
+use App\Http\Requests;
+use Session;
 use Image;
 use File;
 use Auth;
+
 class UserPageController extends Controller
 {
     /**
@@ -65,5 +71,16 @@ class UserPageController extends Controller
             return redirect()->route('profile',compact(['user']))->with('warning','It looks like nothing was uploaded.');
         }
         return redirect()->route('profile',compact(['user']))->with('success','Profile Picture Updated Successfully!');
+    }
+
+    public function getProfile() {
+        //return view('user.profile');
+
+        $orders = Auth::user()->orders;
+        $orders->transform(function($order, $key) {
+            $order->cart = unserialize($order->cart);
+            return $order;
+        });
+        return view('user.profile', ['orders' => $orders]);
     }
 }

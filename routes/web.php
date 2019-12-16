@@ -45,6 +45,7 @@ Route::group(['prefix' => 'home', 'middleware' => ['auth','verified']], function
 
   // settings
 
+  Route::get('/profile', 'UserPageController@getProfile')->name('user.profile');
   Route::get('/user/profile/settings', 'UserPageController@settings')->name('settings');
   Route::get('/user/profile/timeline', 'UserPageController@settings')->name('settings');
 

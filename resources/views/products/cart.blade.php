@@ -45,7 +45,6 @@
             					        
             					        <td class="product-name">
             					        	<h3>{{$product['item']['name']}}</h3>
-            					        	<p>Far far away, behind the word mountains, far from the countries</p>
             					        </td>
             					        
             					        <td class="price">

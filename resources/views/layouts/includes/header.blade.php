@@ -59,6 +59,7 @@
 
                 @if(Auth::check())
 
+                <a class="dropdown-item" href="{{route('user.profile')}}">Profile</a>
                 <a class="dropdown-item" href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;"> @csrf </form>
 

@@ -80,6 +80,6 @@ class ProductController extends Controller
         Auth::user()->orders()->save($order);
         Session::forget('cart');
 
-        return redirect()->route('all-products');
+        return redirect()->route('user.profile');
     }
 }
