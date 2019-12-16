@@ -45,12 +45,12 @@ Route::group(['prefix' => 'home', 'middleware' => ['auth','verified']], function
 
   // settings
 
-  Route::get('/profile', 'UserPageController@getProfile')->name('user.profile');
   Route::get('/user/profile/settings', 'UserPageController@settings')->name('settings');
   Route::get('/user/profile/timeline', 'UserPageController@settings')->name('settings');
 
   //profile
 
+  Route::get('/profile', 'UserPageController@getProfile')->name('user.profile');
   Route::get('/user/profile', 'UserPageController@profile')->name('profile');
   Route::post('/user/profile', 'UserPageController@update_image')->name('profile.update');
   Route::post('/user/password/profile', 'UserController@changePassword')->name('password.update');

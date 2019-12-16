@@ -113,7 +113,7 @@
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label for="select" class=" form-control-label">Privillages</label></div>
                                     <div class="col-12 col-md-9">
-                                        <select name="select" id="select" class="form-control">
+                                        <select name="select" id="select" class="form-control" name="role">
                                             <option value="{{ $user->role }}">Please select</option>
                                             @foreach($roles as $role)
                                                 <option value="{{ $role->name }}">
