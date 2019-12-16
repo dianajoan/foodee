@@ -34,9 +34,9 @@
               <h2 class="ftco-heading-2">Foodee</h2>
               <p>This is an online organic site where customers make and order for an item, payments are made and delivery is proceeded. Its free of charge delievery. Join our site and enjoy.</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                <li class="ftco-animate"><a href="https://twitter.com/LadyAnitanad/"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="https://facebook.com/anitanad256/"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="https://instagram.com/anitanad256/"><span class="icon-instagram"></span></a></li>
               </ul>
             </div>
           </div>
@@ -84,7 +84,7 @@
           <div class="col-md-12 text-center">
 
             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="mailto:dianajoanita900@gmail.com" target="_blank">Diana Joanita</a>
+              &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="mailto:dianajoanita900@gmail.com" target="_blank">Diana Joanita</a>
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
           </div>
