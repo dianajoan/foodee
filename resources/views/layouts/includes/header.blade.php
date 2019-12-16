@@ -34,20 +34,12 @@
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
                 <a class="dropdown-item" href="{{ route('all-products') }}">All Products</a>
-                
-                
-              </div>
-            </li>
-
-           <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Farmers</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown04">
-                  <a class="dropdown-item" href="#">
-                    Vegetables
-                  </a>
+                <a class="dropdown-item" href="#">Vegetables</a>
                    <a class="dropdown-item" href="#">Fruits</a>
                     <a class="dropdown-item" href="#">Juice</a>
                      <a class="dropdown-item" href="#">Dried</a>
+                
+                
               </div>
             </li>
 
@@ -59,6 +51,7 @@
 
                 @if(Auth::check())
 
+                <a class="dropdown-item" href="#"><b><i>{{ Auth::user()->name }}</i></b></a>
                 <a class="dropdown-item" href="{{route('user.profile')}}">Profile</a>
                 <a class="dropdown-item" href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;"> @csrf </form>

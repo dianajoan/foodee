@@ -14,7 +14,7 @@
               <div class="col-md-12 ftco-animate text-center">
                 <h1 class="mb-2">We serve Fresh Vegetables &amp; Fruits</h1>
                 <h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2>
-                <p><a href="#" class="btn btn-primary">View Details</a></p>
+                <p><a href="{{ route('all-products') }}" class="btn btn-primary">View Details</a></p>
               </div>
 
             </div>
@@ -29,7 +29,7 @@
               <div class="col-sm-12 ftco-animate text-center">
                 <h1 class="mb-2">100% Fresh &amp; Organic Foods</h1>
                 <h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2>
-                <p><a href="#" class="btn btn-primary">View Details</a></p>
+                <p><a href="{{ route('all-products') }}" class="btn btn-primary">View Details</a></p>
               </div>
 
             </div>
@@ -99,7 +99,7 @@
                   <div class="text text-center">
                     <h2>Vegetables</h2>
                     <p>Protect the health of every home</p>
-                    <p><a href="#" class="btn btn-primary">Shop now</a></p>
+                    <p><a href="{{ route('all-products') }}" class="btn btn-primary">Shop now</a></p>
                   </div>
                 </div>
               </div>
@@ -140,7 +140,7 @@
           <div class="col-md-12 heading-section text-center ftco-animate">
             <span class="subheading">Featured Products</span>
             <h2 class="mb-4">Our Products</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+            <p>Far far away, behind the word mountains, far from the countries in the world, Shop with us</p>
           </div>
         </div>      
       </div>
