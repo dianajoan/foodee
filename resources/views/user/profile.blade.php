@@ -17,57 +17,36 @@
 
     <section class="ftco-section ftco-cart">
 		<div class="container">
-			<div class="row">
-    			<div class="col-md-12 ftco-animate">
-                    <h3>My Orders</h3>
+			<div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2>My Orders</h2>
 
-    				<div class="cart-list">
-        				<table class="table">
-    					    <thead class="thead-primary">
-    					      <tr class="text-center">
-    					        <th>#</th>
-    					        <th>Product name</th>
-    					        <th>Price</th>
-    					        <th>Quantity</th>
-                                <th>Total Price</th>
-    					      </tr>
-    					    </thead>
-    					    <tbody>
+            @foreach($orders as $order)
 
-                                <?php $i=0; ?>
-                                 @foreach($orders as $order)
+            <div class="card">
+                <div class="card-body">
+                    <ul class="list-group">
 
-                                     @foreach($order->cart->items as $item)
+                        @foreach($order->cart->items as $item)
 
-            					        <tr class="text-center">
-            					        
-                					        <td>{{ ++$i }}</td>
-                					        
-                					        <td class="product-name">
-                					        	<h3>{{$item['item']['name']}}</h3>
-                					        </td>
-                					        
-                					        <td class="price">
-                                                $ {{$item['current_price']}}
-                                            </td>
-                					        
-                                            <td class="quantity">
-                                                {{$item['qty']}}
-                                            </td>
+                        <li class="list-group-item">
+                            <span class="badge">$ {{$item['current_price']}}</span>
+                            {{$item['item']['name']}} | <span class="badge">{{$item['qty']}}</span>
+                        </li>
 
-                                            <td class="total">
-                                                $ {{$order->cart->totalPrice}}
-                                            </td>
-                					        
-            					        </tr><!-- END TR-->
-                                    @endforeach
-                                @endforeach
-    					    </tbody>
-    					  </table>
-    				  </div>
-                      
-    			</div>
-    		</div>
+                        @endforeach
+
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <strong>Total Price: $ {{$order->cart->totalPrice}}</strong>
+                </div>
+            </div>
+
+            @endforeach
+
+        </div>
+    </div>
 		</div>
 		</section>
 
