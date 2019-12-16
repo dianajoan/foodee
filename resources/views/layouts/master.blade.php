@@ -12,6 +12,7 @@
   <body class="goto-here">
 
 		@include('layouts.includes.header')
+    @include('layouts.includes.notification')
 
 		@yield('content')
 

@@ -24,6 +24,16 @@
 
 				@csrf
 
+                @foreach ($errors->all() as $error)
+                <p class="alert alert-danger">{{ $error }}</p>
+                @endforeach
+
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
 				<h3 class="mb-4 billing-heading">Billing Details</h3>
 	          	<div class="row align-items-end">
 		          	<div class="col-md-6">

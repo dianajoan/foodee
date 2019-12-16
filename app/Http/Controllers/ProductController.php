@@ -14,7 +14,7 @@ class ProductController extends Controller
 
     public function allProducts()
     {
-        $products   = Product::latest()->paginate(20);
+        $products   = Product::latest()->paginate(5);
         return view('products.index', ['products' => $products]);
     }
 
@@ -32,7 +32,7 @@ class ProductController extends Controller
 
         $request->session()->put('cart', $cart);
 //        dd($request->session()->get('cart'));
-        return redirect()->route('all-products');
+        return redirect()->route('all-products')->with('success','Product added to Cart Successfully');
     }
 
     public function getRemoveItem($id) {
@@ -46,7 +46,7 @@ class ProductController extends Controller
             Session::forget('cart');
         }
 
-        return redirect()->route('product.cart');
+        return redirect()->route('product.cart')->with('success','Item Deleted Successfully');
     }
 
     public function getCart() {
@@ -80,6 +80,6 @@ class ProductController extends Controller
         Auth::user()->orders()->save($order);
         Session::forget('cart');
 
-        return redirect()->route('user.profile');
+        return redirect()->route('user.profile')->with('success','Order Created Successfully');
     }
 }
