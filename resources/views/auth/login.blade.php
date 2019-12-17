@@ -9,8 +9,12 @@
         <div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
             <form class="login100-form validate-form" method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
                 @csrf
-                <span class="login100-form-title p-b-37">
-                    {{ __('Login') }} | <a href="{{ url('/') }}">{{ config('app.name') }}</a>
+                @foreach ($errors->all() as $error)
+                    <p class="alert alert-danger">{{ $error }}</p>
+                @endforeach
+
+                <span class="login100-form-title p-b-37" style="text-transform: capitalize;">
+                    {{ __('Login') }} | <a href="{{ url('/') }}" style="font-size: 25px;">{{ config('app.name') }}</a>
                 </span>
 
                 <div class="wrap-input100 validate-input m-b-20" data-validate="Enter Your Email">
