@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use App\Models\Permission;
 use App\Models\Role;
 
 class RolesTableSeeder extends Seeder
@@ -12,34 +14,24 @@ class RolesTableSeeder extends Seeder
      */
     public function run()
     {
-        $super_admin = new Role();
-        $super_admin->name = 'super-admin';
-        $super_admin->display_name = 'Super Administrator';
-        $super_admin->description = 'Admin with all rights of the System';
-        $super_admin->save();
+        DB::table('permission_role');
 
-        $role_admin = new Role();
-        $role_admin->name = 'admin';
-        $role_admin->display_name = 'Administrator';
-        $role_admin->description = 'System\'s Head Administrator';
-        $role_admin->save();
+        $owner = new Role();
+        $owner->name         = 'super-admin';
+        $owner->display_name = 'Super Administrator'; // optional
+        $owner->description  = 'A technical administrator of the system with full rights'; // optional
+        $owner->save();
 
-        $role_registra = new Role();
-        $role_registra->name = 'designer';
-        $role_registra->display_name = 'Craft Designer';
-        $role_registra->description = 'An art making user for marketing';
-        $role_registra->save();
-
-        $role_clerk = new Role();
-        $role_clerk->name = 'editor';
-        $role_clerk->display_name = 'Content Editor';
-        $role_clerk->description = 'A user with editing rights of content';
-        $role_clerk->save();
+        $admin = new Role();
+        $admin->name         = 'admin';
+        $admin->display_name = 'Administrator'; // optional
+        $admin->description  = 'The business administrator with full system operation abilities'; // optional
+        $admin->save();
 
         $role_user = new Role();
-        $role_user->name = 'user';
-        $role_user->display_name = 'Normal User';
-        $role_user->description = 'A user signed up with an account';
+        $role_user->name = 'client';
+        $role_user->display_name = 'Client';
+        $role_user->description = 'A user signed up with a client account to ' . config('app.name');
         $role_user->save();
 
         $role_guest = new Role();
@@ -47,5 +39,13 @@ class RolesTableSeeder extends Seeder
         $role_guest->display_name = 'Guest User';
         $role_guest->description = 'A user reviewing the system';
         $role_guest->save();
+
+        // attaching roles to super-admin
+        $permissions = Permission::all();
+
+        foreach ($permissions as $perm) {
+            $owner->attachPermission($perm);
+        }
+        
     }
 }

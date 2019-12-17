@@ -6,16 +6,18 @@ Contents
 
 ### Introduction
 
-    Sources of information
+  [Sources of information](#sources-of-information)
 
-    Installation
-
-    Windows
-    Linux
-
-    Licenses
-
-    Development
+  [Installation](#installation)
+    
+   - [Windows](#windows)
+   - [Linux](#linux)
+  
+  [Licenses](#licenses)
+  
+  [Development](#development)
+  
+  
 
 ### Introduction
 

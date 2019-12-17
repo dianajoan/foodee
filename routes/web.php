@@ -5,144 +5,97 @@
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
 */
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/', function () {
-    return view('home');
+    return view('home')->with('info','Welcome back!');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleware' => 'web'], function(){
-	Route::get('test',[
-		'as' 	=> 'test',
-		'uses'	=> function(){
-			return view('ohome');
-		},
-	]);
+Route::get('/user', 'HomeController@userIndex')->name('userhome');
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Route::group(['prefix' => 'admin', 'middleware' => ['auth','verified','role:super-admin|admin']], function(){
+
+    Route::resource('/roles', 'RoleController');
+    Route::resource('/permissions', 'PermissionController');
+    Route::get('/', 'AdminPageController@index')->name('admin');
 
 });
 
-Route::group(['prefix' => 'admin', 'middleware' => ['auth','role:super-admin|admin']], function(){
-	Route::resource('/roles', 'RolesController');
 
-	/*
-	 * closure pages
-	 */
-	Route::get('/', [
-		'as' 	=> 'admin',
-		'uses'	=> 'AdminPageController@index',
-	]);
-});
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Route::group(['prefix'	=> 'admin', 'middleware'	=> ['auth']], function()
-	{
-		Route::resource('/users', 'UsersController');
-	}
+Route::group(['prefix'  => 'admin', 'middleware'  => ['auth','verified']], function()
+  {
+    Route::resource('/users', 'UserController');
+  }
 );
 
-Route::group(['prefix' => 'home', 'middleware' => ['auth']], function()
-{
-	Route::get('/user/profile/settings', [
-		'as' 	=> 'settings',
-		'uses'	=> 'UserPageController@settings',
-	]);
-	Route::get('/profile', [
-		'as' 	=> 'profile',
-		'uses'	=> 'UserPageController@profile',
-	]);
-	Route::post('/user/profile', [
-		'as'	=> 'profile.update',
-		'uses'	=> 'UserPageController@update_image'
-	]);
-	Route::post('/user/password/profile', [
-		'as'	=> 'password.update',
-		'uses'	=> 'UserController@changePassword'
-	]);
-	
-	Route::get('/user', [
-		'as' 	=> 'userhome',
-		'uses'	=> 'HomeController@userIndex'
-	]);
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+Route::group(['prefix' => 'home', 'middleware' => ['auth','verified']], function(){
+
+  // settings
+
+  Route::get('/user/profile/settings', 'UserPageController@settings')->name('settings');
+  Route::get('/user/profile/timeline', 'UserPageController@settings')->name('settings');
+
+  //profile
+
+  Route::get('/profile', 'UserPageController@getProfile')->name('user.profile');
+  Route::get('/user/profile', 'UserPageController@profile')->name('profile');
+  Route::post('/user/profile', 'UserPageController@update_image')->name('profile.update');
+  Route::post('/user/password/profile', 'UserController@changePassword')->name('password.update');
+  
+  //checkout
+
+  Route::post('/checkout', 'ProductController@postCheckout')->name('checkout');
+  Route::get('/checkout', 'ProductController@getCheckout')->name('checkout');
+
 });
 
-Route::group(['prefix' => 'web', 'middleware' => 'web'], function(){
-	// about page
-	Route::get('about', [
-		'as' 	=> 'about',
-		'uses' 	=> 'PagesController@about',
-	]);
-	// blog page
-	Route::get('blog', [
-		'as' 	=> 'blog',
-		'uses' 	=> 'PagesController@blog',
-	]);
-	// blog page
-	Route::get('blogsingle', [
-		'as' 	=> 'blog-single',
-		'uses' 	=> 'PagesController@blogsingle',
-	]);
-	// cart page
-	Route::get('cart', [
-		'as' 	=> 'cart',
-		'uses' 	=> 'PagesController@cart',
-	]);
-	// checkout page
-	Route::get('checkout', [
-		'as' 	=> 'checkout',
-		'uses' 	=> 'PagesController@checkout',
-	]);
-	// product-single page
-	Route::get('productsingle', [
-		'as' 	=> 'product-single',
-		'uses' 	=> 'PagesController@productsingle',
-	]);
-	// shop page
-	Route::get('shop', [
-		'as' 	=> 'shop',
-		'uses' 	=> 'PagesController@shop',
-	]);
-	// wishlist page
-	Route::get('wishlist', [
-		'as' 	=> 'wishlist',
-		'uses' 	=> 'PagesController@wishlist',
-	]);
-	// contact page
-	Route::get('contact', [
-		'as'  => 'contact',
-		'uses' => 'PagesController@contact',
-	]);
-	// career page
-	Route::get('careers', [
-		'as'  => 'careers',
-		'uses' => 'PagesController@careers',
-	]);
-	// faq page
-	Route::get('faq', [
-		'as'  => 'faq',
-		'uses' => 'PagesController@faq',
-	]);
-	// help page
-	Route::get('help', [
-		'as'  => 'help',
-		'uses' => 'PagesController@help',
-	]);
-	// privacy page
-	Route::get('privacy', [
-		'as'  => 'privacy',
-		'uses' => 'PagesController@privacy',
-	]);
-	// terms page
-	Route::get('terms', [
-		'as'  => 'terms',
-		'uses' => 'PagesController@terms',
-	]);
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//products
+
+Route::get('/all-products', 'ProductController@allProducts')->name('all-products');
+Route::get('/product/{product}', 'ProductController@productDetails')->name('product-details');
+
+//shopping cart
+
+Route::get('/add-to-cart/{id}', 'ProductController@getAddToCart')->name('product.addToCart');
+Route::get('/remove/{id}', 'ProductController@getRemoveItem')->name('product.remove');
+Route::get('/shopping-cart', 'ProductController@getCart')->name('product.cart');
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+Route::group(['prefix' => 'home', 'middleware' => 'web'], function(){
+
+  Route::get('about', 'PagesController@about')->name('about');
+  Route::get('contact', 'PagesController@contact')->name('contact');
+  Route::get('faq', 'PagesController@faq')->name('faq');
+  Route::get('help', 'PagesController@help')->name('help');
+  Route::get('privacy', 'PagesController@privacy')->name('privacy');
+  Route::get('terms', 'PagesController@terms')->name('terms');  
+
+
 });
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
 
 

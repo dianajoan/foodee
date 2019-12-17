@@ -8,77 +8,37 @@ class PagesController extends Controller
 {
 	public function home()
 	{
-		return view('home');
+		return view('system.home');
 	}
 
 	public function about()
 	{
-		return view('web.about');
-	}
-
-	public function blog()
-	{
-		return view('web.blog');
-	}
-
-	public function blogsingle()
-	{
-		return view('web.blog-single');
-	}
-
-	public function cart()
-	{
-		return view('web.cart');
-	}
-
-	public function checkout()
-	{
-		return view('web.checkout');
-	}
-
-	public function productsingle()
-	{
-		return view('web.product-single');
-	}
-
-	public function shop()
-	{
-		return view('web.shop');
-	}
-
-	public function wishlist()
-	{
-		return view('web.wishlist');
+		return view('system.about');
 	}
 
 	public function contact()
 	{
-		return view('web.contact');
-	}
-
-	public function careers()
-	{
-		return view('web.careers');
+		return view('system.contact');
 	}
 
 	public function faq()
 	{
-		return view('web.more.faq');
+		return view('web.faq');
 	}
 
 	public function help()
 	{
-		return view('web.more.help');
+		return view('web.help');
 	}
 
 	public function privacy()
 	{
-		return view('web.more.privacy');
+		return view('web.privacy');
 	}
 
 	public function terms()
 	{
-		return view('web.more.terms');
+		return view('web.terms');
 	}
 
 }
