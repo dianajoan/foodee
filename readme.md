@@ -9,8 +9,8 @@ Contents
   [Sources of information](#sources-of-information)
 
   [Installation](#installation)
-    [Windows](#windows)
-    [Linux](#linux)
+    - [Windows](#windows)
+    - [Linux](#linux)
   
   [Licenses](#licenses)
   
