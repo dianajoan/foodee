@@ -231,7 +231,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         // roles and perms
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
-        'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
+        
 
 
     ],
