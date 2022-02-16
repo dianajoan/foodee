@@ -35,25 +35,23 @@ This is how you can install this project on your local machine, computer or just
     ```git clone https://github.com/dianajoan/foodee.git```
 
 2. Type in the cmd panel:
-    ```
-    composer install
-    composer update
-    php artisan serve
-
-    ```
+    ````composer install
+        composer update
+        php artisan serve
+        php artisan key:generate````
 
 4. Next step is to configure the project. If you are using linux, browse into your project directory with the terminal and enter the command
 
     ```cp .env.example .env```
 
-    If you are on windows, locate the .env.example file, copy all its content and create a new file called .env, paste it all and update these Fields to your created database name. In this case, it is db_craft
+    If you are on windows, locate the .env.example file, copy all its content and create a new file called .env, paste it all and update these Fields to your created database name. In this case, it is db_foodee
 
     ```
 
     DB_CONNECTION=mysql
     DB_HOST=127.0.0.1
     DB_PORT=3306
-    DB_DATABASE=db_food
+    DB_DATABASE=database_name
     DB_USERNAME=root
     DB_PASSWORD=password
     either use the bash command to use a fresh database
@@ -80,4 +78,4 @@ The source code is released under the MIT License.
 ### Development
 
 This is developed by [Diana Joanita Nakyazze](mailto:dianajoanita900@gmail.com)
-Powered by ```dianajoan.github.io```
+Powered by ```anitanad.dsnibro.com```
