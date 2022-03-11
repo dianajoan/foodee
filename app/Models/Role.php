@@ -2,11 +2,9 @@
 
 namespace App\Models;
 
-use Zizaco\Entrust\EntrustRole;
+use Laratrust\Models\LaratrustRole;
 
-class Role extends EntrustRole
+class Role extends LaratrustRole
 {
-    protected $fillable = [
-    	'name','display_name','description'
-    ];
+    public $guarded = [];
 }
