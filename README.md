@@ -7,7 +7,7 @@
 - Run __composer install__
 - Run __php artisan key:generate__
 - Run __php artisan migrate --seed__ (it has some seeded data for your testing)
-- That's it: launch the main URL and login with default credentials in the __seeder__
+- That's it: launch the main URL and login with default credentials in the __db seeder__
 - Run __php artisan serve__
 ## License
 
