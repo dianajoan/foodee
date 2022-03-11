@@ -38,7 +38,7 @@
 
         			<div class="col-md-6 col-lg-3 ftco-animate">
         				<div class="product">
-        					<a href="#" class="img-prod"><img class="img-fluid" src="{{$product->imagePath}}" alt="Colorlib Template">
+        					<a href="#" class="img-prod"><img class="img-fluid" src="{{$product->imagePath}}" alt="">
         						<span class="status">{{$product->status}}</span>
         						<div class="overlay"></div>
         					</a>
