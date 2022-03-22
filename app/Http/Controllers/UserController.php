@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Password;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\Request;
 use App\Models\Role;
-use App\User;
+use App\Models\User;
 use Auth;
 
 class UserController extends Controller
