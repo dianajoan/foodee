@@ -16,4 +16,3 @@ The source code is released under the MIT License.
 ### Development
 
 This is developed by [Diana Joanita Nakyazze](mailto:dianajoanita900@gmail.com)
-Powered by ```anitanad.dsnibro.com```
